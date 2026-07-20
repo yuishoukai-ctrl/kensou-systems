@@ -63,6 +63,7 @@ export default function LeadForm() {
   const [errors, setErrors] = useState<Partial<Record<keyof LeadData, string>>>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
+  const [completed, setCompleted] = useState(false);
 
   const summary = useMemo(() => makeSummary(data), [data]);
   const mailto = `mailto:?subject=${encodeURIComponent("大型ウェットブラストマシン デモ・導入相談")}&body=${encodeURIComponent(summary)}`;
@@ -121,6 +122,7 @@ export default function LeadForm() {
     setStatus("loading");
     setStatusMessage("相談内容を作成しています。");
     window.setTimeout(() => {
+      setCompleted(true);
       setStatus("success");
       setStatusMessage("相談内容を作成しました。");
     }, 550);
@@ -138,7 +140,7 @@ export default function LeadForm() {
     }
   }
 
-  if (status === "success") {
+  if (completed) {
     return (
       <div className="lead-form lead-success" aria-live="polite">
         <span className="form-kicker">相談内容 / READY</span>
@@ -150,7 +152,7 @@ export default function LeadForm() {
         <div className="form-actions form-actions-stacked">
           <button className="button button-primary button-dark-text" type="button" onClick={copySummary}>相談内容をコピー</button>
           <a className="button button-outline-dark" href={mailto}>メールアプリで開く</a>
-          <button className="text-button" type="button" onClick={() => { setStep(1); setStatus("idle"); setStatusMessage(""); }}>
+          <button className="text-button" type="button" onClick={() => { setCompleted(false); setStep(1); setStatus("idle"); setStatusMessage(""); }}>
             入力内容を修正する
           </button>
         </div>
