@@ -76,7 +76,7 @@ export default function Home() {
     <>
       <header className="site-header">
         <a className="brand" href="/" aria-label="研装システムズの機材販売ページへ戻る">
-          <img className="brand-logo" src="/assets/logo-kensou-systems.png" alt="" width="1400" height="366" />
+          <img className="brand-logo" src="/assets/logo-kensou-systems-dark.png" alt="" width="1400" height="356" />
         </a>
         <nav className="desktop-nav" aria-label="メインナビゲーション">
           <a href="/">機材一覧</a>
@@ -311,7 +311,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-brand">
-          <img className="brand-logo" src="/assets/logo-kensou-systems.png" alt="研装システムズ｜KENSO SYSTEMS" width="1400" height="366" loading="lazy" />
+          <img className="brand-logo" src="/assets/logo-kensou-systems-dark.png" alt="研装システムズ｜KENSO SYSTEMS" width="1400" height="356" loading="lazy" />
         </div>
         <div className="footer-status">
           <span>PRODUCT / CONTACT</span>

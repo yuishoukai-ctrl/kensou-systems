@@ -65,7 +65,7 @@ test("ships optimized product assets without starter preview code", async () => 
   ]);
 
   assert.match(page, /KENSO SYSTEMS/);
-  assert.match(page, /logo-kensou-systems\.png/);
+  assert.match(page, /logo-kensou-systems-dark\.png/);
   assert.match(page, /sandblast-concept\.webp/);
   assert.match(page, /<EquipmentLeadForm \/>/);
   assert.match(layout, /generateMetadata/);
@@ -74,6 +74,7 @@ test("ships optimized product assets without starter preview code", async () => 
   assert.deepEqual(
     assets.sort(),
     [
+      "logo-kensou-systems-dark.png",
       "logo-kensou-systems.png",
       "sandblast-concept.webp",
       "wetblast-hero.webp",
