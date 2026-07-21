@@ -217,7 +217,7 @@ export default function EquipmentCatalogPage() {
               <strong>ブラスト・粉体塗装設備</strong>
               <p>ウェットブラスト、サンドブラスト、粉体塗装機、粉体塗装用乾燥炉の企画・販売。</p>
             </article>
-            <a className="catalog-division-card catalog-division-link" href="https://yasashii-web-studio-jp.yuishoukai.chatgpt.site" target="_blank" rel="noreferrer" aria-label="Web制作事業部・やさしいWeb制作を見る">
+              <a className="catalog-division-card catalog-division-link" href="https://web.kensosystems.jp/" target="_blank" rel="noreferrer" aria-label="Web制作事業部・やさしいWeb制作を見る">
               <span>WEB CREATION DIVISION</span>
               <small>公開中</small>
               <h3>Web制作事業部</h3>
