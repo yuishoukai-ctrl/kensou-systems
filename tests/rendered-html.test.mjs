@@ -42,6 +42,8 @@ test("server-renders the equipment catalog", async () => {
   assert.match(html, /電動ワイパー/);
   assert.match(html, /設備一式を相談する/);
   assert.match(html, /連絡先の入力へ/);
+  assert.match(html, /href="tel:05017850018"/);
+  assert.match(html, /050-1785-0018/);
   assert.match(html, /property="og:image" content="https:\/\/preview\.example\/og-kensou-systems\.png"/);
   assert.doesNotMatch(html, /Your site is taking shape|react-loading-skeleton|codex-preview/i);
 });

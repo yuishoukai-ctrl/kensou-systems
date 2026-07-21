@@ -2394,6 +2394,37 @@ section[id] {
   line-height: 2;
 }
 
+.catalog-phone-contact {
+  margin-top: 30px;
+  padding: 21px 22px;
+  color: var(--ink);
+  background: var(--orange-soft);
+  border-left: 4px solid var(--orange);
+}
+
+.catalog-phone-contact strong {
+  display: block;
+  font-size: 13px;
+}
+
+.catalog-phone-contact a {
+  display: block;
+  width: fit-content;
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.catalog-phone-contact p {
+  margin: 7px 0 0;
+  color: #654b38;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
 .consult-safety {
   margin-top: 30px;
   padding: 21px 22px;

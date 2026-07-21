@@ -244,6 +244,11 @@ export default function EquipmentCatalogPage() {
             <p className="eyebrow">EQUIPMENT CONSULTATION</p>
             <h2>設備と工程を、<br />まとめて相談。</h2>
             <p>分からない項目は「不明」で構いません。対象ワークと現在の困りごとから確認を始めます。</p>
+            <div className="catalog-phone-contact">
+              <strong>お電話でのご相談</strong>
+              <a href="tel:05017850018">050-1785-0018</a>
+              <p>受付時間　平日 9:00〜18:00</p>
+            </div>
             <div className="consult-safety">
               <strong>ご相談前に</strong>
               <p>ブラスト・粉体塗装設備・乾燥炉は、電源・圧縮空気・接地・換気・集塵・排気・防火等の条件確認が必要です。</p>
