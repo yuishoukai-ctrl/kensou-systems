@@ -35,6 +35,11 @@ test("server-renders the equipment catalog", async () => {
   assert.match(html, /898,000/);
   assert.match(html, /粉体塗装機/);
   assert.match(html, /粉体塗装用乾燥炉/);
+  assert.match(html, /href="\/drying-oven"/);
+  assert.match(html, /炉内内寸 約1200 × 1200 × 1200mm/);
+  assert.match(html, /横幅 約1700mm × 奥行 約700mm/);
+  assert.match(html, /1,200,000円/);
+  assert.match(html, /1,800,000円/);
   assert.match(html, /サンドブラスト/);
   assert.match(html, /AI生成コンセプト画像/);
   assert.match(html, /推奨コンプレッサー/);
@@ -46,6 +51,19 @@ test("server-renders the equipment catalog", async () => {
   assert.match(html, /050-1785-0018/);
   assert.match(html, /property="og:image" content="https:\/\/preview\.example\/og-kensou-systems\.png"/);
   assert.doesNotMatch(html, /Your site is taking shape|react-loading-skeleton|codex-preview/i);
+});
+
+test("server-renders the drying oven detail page", async () => {
+  const response = await render("/drying-oven");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /粉体塗装用乾燥炉/);
+  assert.match(html, /120サイズ/);
+  assert.match(html, /180サイズ/);
+  assert.match(html, /1,200,000円/);
+  assert.match(html, /1,800,000円/);
+  assert.match(html, /powder-curing-oven-generated\.webp/);
+  assert.match(html, /高さと炉内有効寸法は確認中/);
 });
 
 test("keeps the wet-blast product detail page", async () => {
@@ -71,13 +89,14 @@ test("ships optimized product assets without starter preview code", async () => 
   assert.match(page, /sandblast-concept\.webp/);
   assert.match(page, /<EquipmentLeadForm \/>/);
   assert.match(layout, /generateMetadata/);
-  assert.match(layout, /robots:\s*\{ index: false, follow: false \}/);
+  assert.match(layout, /robots:\s*\{ index: true, follow: true \}/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.deepEqual(
     assets.sort(),
     [
       "logo-kensou-systems-dark.png",
       "logo-kensou-systems.png",
+      "powder-curing-oven-generated.webp",
       "sandblast-concept.webp",
       "wetblast-hero.webp",
       "wetblast-open.webp",

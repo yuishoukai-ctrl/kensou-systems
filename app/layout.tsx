@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     icons: { icon: "/favicon-kensou.png" },
     alternates: { canonical: base },
-    robots: { index: false, follow: false },
+    robots: { index: true, follow: true },
     openGraph: {
       type: "website",
       locale: "ja_JP",

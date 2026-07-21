@@ -52,7 +52,7 @@ export default function EquipmentCatalogPage() {
       <main id="top" className="catalog-page">
         <section className="catalog-hero" aria-labelledby="catalog-title">
           <div className="catalog-hero-copy">
-            <p className="eyebrow">METAL FINISHING EQUIPMENT</p>
+            <p className="eyebrow">表面処理・粉体塗装設備</p>
             <h1 id="catalog-title">ブラスト処理から<br />粉体塗装、焼付まで。</h1>
             <p className="catalog-hero-tagline">現場に合う一連の設備を、ひとつの窓口で。</p>
             <p className="catalog-hero-lead">
@@ -169,20 +169,27 @@ export default function EquipmentCatalogPage() {
 
           <article className="catalog-product product-oven">
             <figure className="catalog-product-image catalog-generated-image oven-crop">
-              <img src="/equipment-lineup.png" alt="粉体塗装用乾燥炉を含む設備構成イメージ" width="1720" height="909" loading="lazy" />
-              <figcaption>製品構成イメージ / 実機写真ではありません</figcaption>
+              <img src="/assets/powder-curing-oven-generated.webp" alt="粉体塗装用乾燥炉のAI生成参考イメージ" width="1536" height="1024" loading="lazy" />
+              <figcaption>AI生成による参考イメージ / 実機写真へ差し替え予定</figcaption>
             </figure>
             <div className="catalog-product-copy">
               <div className="product-status is-planning"><span>04</span> 取扱準備中・導入相談受付</div>
               <p className="product-type">POWDER CURING OVEN</p>
               <h3>ワーク寸法と焼付条件から考える、<br />粉体塗装用乾燥炉。</h3>
-              <p>炉内に入れる最大ワーク、必要温度・保持時間、一回の処理量、設置スペース、搬入経路、利用可能な熱源を確認し、受注仕様を検討します。</p>
+              <p>ワーク寸法に合わせて選べる2サイズをご用意する予定です。必要温度・保持時間、処理量、設置スペース、搬入経路、利用可能な熱源を確認し、受注仕様を検討します。</p>
+              <div className="oven-size-grid" aria-label="乾燥炉の予定サイズ">
+                <div><span>120サイズ</span><strong>炉内内寸 約1200 × 1200 × 1200mm</strong><b>販売価格 1,200,000円</b><small>120cm四方の炉内</small></div>
+                <div><span>180サイズ</span><strong>横幅 約1700mm × 奥行 約700mm</strong><b>販売価格 1,800,000円</b><small>高さ・炉内有効寸法は確認中</small></div>
+              </div>
               <div className="planning-block">
                 <span>案件ごとに確認</span>
                 <ul><li>最大ワーク寸法・重量・数量</li><li>粉体メーカー指定の焼付条件</li><li>炉内有効寸法・扉開口</li><li>電源・熱源・換気・排気条件</li><li>設置場所・搬入経路・安全設備</li></ul>
               </div>
-              <p className="planning-note">溶剤塗料や可燃性物質の加熱用途を示すものではありません。仕様・価格・発売時期は策定中です。</p>
-              <a className="button button-primary" href="/?equipment=oven#consult">乾燥炉の仕様を相談する</a>
+              <p className="planning-note">溶剤塗料や可燃性物質の加熱用途を示すものではありません。税区分・送料・搬入設置費等は正式見積に明記します。</p>
+              <div className="product-actions">
+                <a className="button button-primary" href="/drying-oven">乾燥炉の詳細を見る</a>
+                <a className="button button-ghost-light" href="/?equipment=oven#consult">仕様を相談する</a>
+              </div>
             </div>
           </article>
         </section>

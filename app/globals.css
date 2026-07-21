@@ -19,6 +19,46 @@
   --max-width: 1280px;
 }
 
+/* Powder curing oven detail */
+.oven-detail-page { min-height: 100vh; color: var(--white); background: var(--ink); }
+.oven-detail-main { min-height: 70vh; }
+.oven-detail-hero { display: grid; grid-template-columns: minmax(400px, 5fr) minmax(520px, 7fr); min-height: 680px; }
+.oven-detail-copy { display: flex; flex-direction: column; justify-content: center; padding: 78px 58px 78px max(24px, calc((100vw - 1240px) / 2)); }
+.oven-detail-copy h1 { margin: 0 0 24px; font-size: clamp(48px, 5vw, 72px); letter-spacing: -0.015em; line-height: 1.2; }
+.oven-detail-lead { max-width: 34em; margin: 0 0 30px; color: #b7c8ce; line-height: 2; }
+.oven-detail-visual { position: relative; min-height: 680px; margin: 0; overflow: hidden; background: #102a38; }
+.oven-detail-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.oven-detail-visual figcaption { position: absolute; right: 14px; bottom: 12px; z-index: 2; padding: 7px 9px; color: #d5e2e6; background: rgba(7, 25, 37, 0.82); font-size: 9px; }
+.oven-detail-section { padding: 96px max(24px, calc((100vw - 1240px) / 2)); color: var(--ink); background: var(--paper); }
+.oven-detail-heading { display: grid; grid-template-columns: minmax(240px, 4fr) minmax(400px, 8fr); gap: 60px; margin-bottom: 48px; }
+.oven-detail-heading h2 { margin: 0; font-size: clamp(34px, 4vw, 54px); letter-spacing: -0.015em; line-height: 1.2; }
+.oven-detail-heading p { margin: 0; color: #506166; line-height: 2; }
+.oven-models { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.oven-model { padding: 34px; border: 1px solid var(--line); background: var(--white); }
+.oven-model-label { display: block; margin-bottom: 18px; color: var(--cyan-dark); font-size: 13px; font-weight: 700; }
+.oven-model-price { display: block; margin: 0 0 18px; padding: 12px 14px; color: var(--ink); background: #f2b580; font-size: 18px; }
+.oven-model h3 { margin: 0 0 14px; font-size: clamp(25px, 2.5vw, 38px); letter-spacing: -0.015em; line-height: 1.25; }
+.oven-model p { margin: 0; color: #596a70; line-height: 1.8; }
+.oven-spec-note { margin: 26px 0 0; padding: 19px 22px; color: #596a70; background: #e9eeee; font-size: 12px; line-height: 1.8; }
+.oven-consult { display: grid; grid-template-columns: minmax(320px, 5fr) minmax(480px, 7fr); gap: 70px; padding: 96px max(24px, calc((100vw - 1240px) / 2)); }
+.oven-consult h2 { margin: 0 0 24px; font-size: clamp(34px, 4vw, 54px); letter-spacing: -0.015em; line-height: 1.2; }
+.oven-consult p { color: #afc0c7; line-height: 1.9; }
+.oven-checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 0; padding: 1px; background: var(--line-dark); list-style: none; }
+.oven-checklist li { padding: 22px; color: #c7d5da; background: var(--navy-2); font-size: 13px; }
+.oven-detail-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+@media (max-width: 900px) {
+  .oven-detail-hero, .oven-detail-heading, .oven-consult { grid-template-columns: 1fr; }
+  .oven-detail-copy { padding: 70px 24px; }
+  .oven-detail-visual { min-height: 520px; }
+  .oven-detail-section, .oven-consult { padding: 76px 24px; }
+}
+
+@media (max-width: 540px) {
+  .oven-size-grid, .oven-models, .oven-checklist { grid-template-columns: 1fr; }
+  .oven-detail-copy h1 { font-size: 44px; }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -32,7 +72,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font-family: "BIZ UDPGothic", "Yu Gothic UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "Yu Gothic", Meiryo, sans-serif;
   font-size: 16px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
@@ -227,7 +267,7 @@ section[id] {
   color: var(--cyan);
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -250,8 +290,8 @@ section[id] {
 .lead-form h3 {
   margin-top: 0;
   font-weight: 780;
-  letter-spacing: -0.055em;
-  line-height: 1.12;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
 }
 
 .hero h1 {
@@ -712,7 +752,7 @@ section[id] {
 .proof-cta p {
   margin: 0 0 30px;
   font-size: clamp(24px, 2.2vw, 34px);
-  font-weight: 780;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.45;
 }
@@ -771,7 +811,7 @@ section[id] {
   margin-bottom: 9px;
   color: #9a4b10;
   font-size: 10px;
-  font-weight: 850;
+  font-weight: 700;
   letter-spacing: 0.15em;
 }
 
@@ -1086,8 +1126,8 @@ section[id] {
   margin-bottom: 7px;
   color: var(--cyan-dark);
   font-size: 10px;
-  font-weight: 850;
-  letter-spacing: 0.15em;
+  font-weight: 700;
+  letter-spacing: 0.07em;
 }
 
 .lead-form h3 {
@@ -1823,7 +1863,7 @@ section[id] {
 .catalog-consult h2 {
   margin-top: 0;
   font-weight: 800;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.015em;
   line-height: 1.12;
 }
 
@@ -1908,8 +1948,8 @@ section[id] {
   background: rgba(7, 21, 34, 0.88);
   border-right: 2px solid var(--cyan);
   font-size: 9px;
-  font-weight: 850;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
 .catalog-status-strip {
@@ -2316,6 +2356,28 @@ section[id] {
   color: #d5a77f !important;
   font-size: 12px;
 }
+
+.oven-size-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0 0 24px;
+  background: var(--line-dark);
+  border: 1px solid var(--line-dark);
+}
+
+.oven-size-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 19px;
+  background: var(--navy-2);
+}
+
+.oven-size-grid span { color: var(--cyan); font-size: 11px; font-weight: 700; }
+.oven-size-grid strong { color: var(--white); font-size: 14px; line-height: 1.55; }
+.oven-size-grid b { color: #f0b07d; font-size: 15px; }
+.oven-size-grid small { color: #91a8b2; font-size: 11px; }
 
 .catalog-support {
   color: var(--white);

@@ -65,5 +65,19 @@
     });
   });
 
+  const equipmentKey = new URLSearchParams(window.location.search).get('equipment');
+  const equipmentMap = {
+    wetblast: '大型ウェットブラスト',
+    sandblast: 'サンドブラストマシン',
+    powder: '粉体塗装機',
+    oven: '粉体塗装用乾燥炉',
+  };
+  const equipmentName = equipmentMap[equipmentKey];
+  if (equipmentName) {
+    const checkbox = [...form.querySelectorAll('input[name="equipment"]')]
+      .find((input) => input.value === equipmentName);
+    if (checkbox) checkbox.checked = true;
+  }
+
   updateSummary();
 })();
