@@ -2426,6 +2426,11 @@ section[id] {
   border-top: 5px solid var(--cyan-dark);
 }
 
+.training-card-cerakote {
+  background: #fffaf4;
+  border-top: 5px solid var(--orange);
+}
+
 .training-card-onsite {
   display: grid;
   grid-column: 1 / -1;
@@ -2500,6 +2505,27 @@ section[id] {
 .training-card-foot > p {
   min-height: 3.5em;
   margin: 12px 0 21px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.cerakote-performance {
+  padding: 17px 18px;
+  background: #f4e7d9;
+  border-left: 4px solid var(--orange);
+}
+
+.cerakote-performance > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.cerakote-performance > p {
+  margin: 0;
   color: var(--muted);
   font-size: 11px;
   line-height: 1.75;
