@@ -274,7 +274,7 @@ export default function EquipmentCatalogPage() {
               <div>
                 <div className="training-card-head"><span>04 / CERAMIC COATING</span><strong>内容・料金は個別見積</strong></div>
                 <h3>セラコート実技講習</h3>
-                <p className="training-audience">米国生まれの薄膜セラミックコーティング「CERAKOTE®」を、車・バイクのレストアやカスタム、自社製品の仕上げに取り入れたい事業者向け。</p>
+                <p className="training-audience">米国生まれの薄膜セラミックコーティング「CERAKOTE®」を、車・バイクのレストアやカスタム、自社製品の仕上げに取り入れたい事業者向け。エアガンに加え、海外では銃器・航空宇宙分野の部品にも活用例があります。</p>
               </div>
               <ul className="training-topics">
                 <li><strong>ガン設定</strong><span>ノズル、エア圧、吐出量、パターン幅をワークと塗料に合わせる</span></li>
