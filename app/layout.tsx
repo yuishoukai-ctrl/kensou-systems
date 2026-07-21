@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "大型ウェットブラストマシン｜ホイール・エンジン対応｜実機デモ受付中";
-const description = "ホイールや大型エンジンに対応する大型ウェットブラストマシン。本体電源AC100V、電動ワイパー搭載。用途・設置条件・コンプレッサーを確認後、正式見積をご案内します。";
+const title = "表面処理・粉体塗装設備｜ウェットブラスト・粉体塗装機・乾燥炉";
+const description = "大型ウェットブラスト、粉体塗装機、粉体塗装用乾燥炉の機材販売・導入相談。下地処理から粉体塗装、焼付まで、ワークと設置環境に合わせて設備を検討します。";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -25,8 +25,8 @@ export async function generateMetadata(): Promise<Metadata> {
       url: base,
       title,
       description,
-      siteName: "LARGE WET BLAST SYSTEM",
-      images: [{ url: socialImage, width: 1712, height: 909, alt: "大型ウェットブラストマシン 販売価格898,000円" }],
+      siteName: "SURFACE FINISH SYSTEMS",
+      images: [{ url: socialImage, width: 1720, height: 909, alt: "大型ウェットブラスト・粉体塗装機・粉体塗装用乾燥炉" }],
     },
     twitter: {
       card: "summary_large_image",

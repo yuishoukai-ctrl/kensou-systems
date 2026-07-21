@@ -1,332 +1,222 @@
-/* eslint-disable @next/next/no-img-element -- Pre-sized local WebP assets avoid vinext image-optimizer failures. */
-import type { CSSProperties } from "react";
-import LeadForm from "./LeadForm";
+/* eslint-disable @next/next/no-img-element, @next/next/no-html-link-for-pages -- Local assets and native route links are used for vinext compatibility. */
+import EquipmentLeadForm from "./EquipmentLeadForm";
 
-const specs = [
-  ["方式", "手動式ウェットブラスト"],
-  ["外形寸法", "W1000 × D800 × H1900 mm"],
-  ["本体電源", "AC100V"],
-  ["推奨コンプレッサー", "5.5kW"],
-  ["視認装備", "電動ワイパー"],
-  ["対応ワーク", "ホイール・エンジン等 ※適合確認制"],
-  ["販売価格", "898,000円 ※税区分等は正式見積"],
-];
-
-const orderSteps = [
+const equipmentFaqs = [
   {
-    number: "01",
-    title: "デモ・テスト加工相談",
-    text: "実機またはオンラインで、ワークの収まり・操作・視界を確認します。",
+    q: "3種類すべて導入する必要がありますか？",
+    a: "いいえ。大型ウェットブラスト、粉体塗装機、粉体塗装用乾燥炉は単体でもご相談いただけます。現在の設備を確認し、必要な部分だけ整理します。",
   },
   {
-    number: "02",
-    title: "用途・設置条件の確認",
-    text: "ワーク、コンプレッサー、設置場所、搬入経路、納品先を整理します。",
+    q: "工程全体の相談もできますか？",
+    a: "はい。下地処理から粉体塗装、焼付までの流れに沿って、ワーク寸法、処理量、設置スペース、電源・エア・換気条件を確認します。材質や要求品質により、洗浄・乾燥・マスキング等の工程も別途検討します。",
   },
   {
-    number: "03",
-    title: "正式見積",
-    text: "本体、付属品、送料、搬入・設置、納期、保証、支払条件を明記します。",
+    q: "粉体塗装機と乾燥炉の価格はいくらですか？",
+    a: "現在、仕様と販売条件を策定中です。ワーク、処理量、必要仕様、設置条件を確認し、確定後に正式見積をご案内します。",
   },
   {
-    number: "04",
-    title: "予約金・製作枠確保",
-    text: "注文条件をご確認後、予約金の入金をもって製作枠を確保します。",
+    q: "ウェットブラストは100Vだけで使えますか？",
+    a: "本体電源はAC100Vですが、噴射には圧縮空気が必要です。推奨コンプレッサーは5.5kWです。100V機や200V・2.2kW機では噴射力・処理速度が低下します。",
   },
   {
-    number: "05",
-    title: "完成確認・納品",
-    text: "完成状態を写真または動画で確認後、合意した配送条件に沿って納品します。",
+    q: "手持ちのワークが入るか確認できますか？",
+    a: "寸法・重量・写真をもとに確認します。ウェットブラストは実機デモ、その他の設備は必要な有効寸法や扉開口、積載条件を整理してご案内します。",
+  },
+  {
+    q: "搬入・設置まで依頼できますか？",
+    a: "納品先、搬入口、荷下ろし設備、設置場所を確認し、対応範囲と費用を正式見積に記載します。電気、換気、集塵、排気等の工事範囲も事前に確認します。",
   },
 ];
 
-const faqs = [
-  {
-    q: "本体が100Vなら、100Vコンプレッサーだけで十分ですか？",
-    a: "本体電源はAC100Vですが、噴射性能はコンプレッサー能力に左右されます。推奨は5.5kWです。100V機や200V・2.2kW機では噴射力・処理速度が低下するため、型式を確認して導入可否をご案内します。",
-  },
-  {
-    q: "ホイールやエンジンは入りますか？",
-    a: "ホイールを収めた実機写真をご確認いただけます。ワークごとに寸法・重量が異なるため、写真・寸法・重量、または現物で適合を確認します。",
-  },
-  {
-    q: "デモでは何を確認できますか？",
-    a: "ワークの収まり、操作方法、電動ワイパーの動作、コンプレッサー条件を確認できます。テスト加工をご希望の場合は、対象物と希望仕上がりを事前に伺います。",
-  },
-  {
-    q: "送料や設置費は価格に含まれますか？",
-    a: "納品先と搬入条件を確認し、本体、送料、搬入・設置、付属品を分けて正式見積に記載します。",
-  },
-  {
-    q: "納期はどのくらいですか？",
-    a: "受注枠と仕様確認後、正式見積で納期の目安を提示します。在庫を多く持たない受注生産方式です。",
-  },
-  {
-    q: "保証や消耗品はどうなりますか？",
-    a: "保証範囲・期間、消耗品、交換部品、サポート方法を正式見積に明記します。",
-  },
-];
-
-function Eyebrow({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
-  return <p className={`eyebrow${dark ? " eyebrow-dark" : ""}`}>{children}</p>;
-}
-
-export default function Home() {
+export default function EquipmentCatalogPage() {
   return (
     <>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="大型ウェットブラストマシン トップへ">
-          <span className="brand-mark">WB</span>
-          <span className="brand-name">LARGE WET BLAST</span>
+      <header className="catalog-header">
+        <a className="catalog-brand" href="#top" aria-label="表面処理・粉体塗装設備 トップへ">
+          <span className="brand-mark">SF</span>
+          <span><strong>SURFACE FINISH SYSTEMS</strong><small>表面処理・粉体塗装設備</small></span>
         </a>
-        <nav className="desktop-nav" aria-label="メインナビゲーション">
-          <a href="#features">特長</a>
-          <a href="#spec">仕様</a>
-          <a href="#flow">導入の流れ</a>
-          <a href="#faq">よくある質問</a>
+        <nav className="catalog-nav" aria-label="機材販売ページ ナビゲーション">
+          <a href="#lineup">製品一覧</a>
+          <a href="#process">工程提案</a>
+          <a href="#support">導入の流れ</a>
+          <a href="#equipment-faq">よくある質問</a>
         </nav>
-        <a className="header-cta" href="#inquiry">実機デモを予約</a>
+        <a className="catalog-header-cta" href="#consult">設備導入を相談</a>
       </header>
 
-      <main id="top">
-        <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <div className="hero-copy-inner">
-              <Eyebrow>受注枠制 / LARGE WET BLAST SYSTEM</Eyebrow>
-              <h1 id="hero-title">
-                ホイールや
-                <br />
-                大型エンジンに
-                <br />
-                <span>対応。</span>
-              </h1>
-              <p className="hero-lead">
-                これまで高額だった大型ウェットブラストマシンを、導入しやすい価格で。
-                大きなワークをキャビネット内で処理できる、受注生産の実機です。
-              </p>
-              <div className="hero-actions">
-                <a className="button button-primary" href="#inquiry">実機デモを予約する</a>
-                <a className="button button-ghost" href="#spec">仕様を確認する</a>
-              </div>
-              <p className="hero-note">正式注文の前に、ワーク・搬入経路・コンプレッサー条件を確認します。</p>
-            </div>
-          </div>
-
-          <div className="hero-visual">
-            <img
-              src="/assets/wetblast-hero.webp"
-              alt="大型ウェットブラストマシンの実機全景"
-              width="1200"
-              height="1500"
-              fetchPriority="high"
-            />
-            <div className="availability-tag">
-              <span>BUILD TO ORDER</span>
-              <strong>製作枠を順次受付</strong>
-            </div>
-            <aside className="price-lockup" aria-label="販売価格">
-              <span>販売価格</span>
-              <strong><b>898,000</b>円</strong>
-              <small>税区分・送料・設置費等は正式見積</small>
-            </aside>
-          </div>
-        </section>
-
-        <section className="quick-spec" aria-label="主要仕様">
-          <div><span>BODY POWER</span><strong>AC100V</strong></div>
-          <div><span>COMPRESSOR</span><strong>推奨 5.5kW</strong></div>
-          <div><span>EXTERNAL SIZE</span><strong>W1000 × D800 × H1900</strong></div>
-          <div><span>VISIBILITY</span><strong>電動ワイパー</strong></div>
-        </section>
-
-        <section className="section section-light intro-section" id="features">
-          <div className="section-heading split-heading">
-            <div>
-              <Eyebrow dark>WHY LARGE CABINET</Eyebrow>
-              <h2>小型機では入らないワークを、<br />分解せずに処理したい現場へ。</h2>
-            </div>
-            <p>
-              レストア、エンジン整備、ホイール補修、機械修理。
-              大型ワークを扱う現場の「入らない」を解消するためのサイズと、作業中の視認性を両立しました。
+      <main id="top" className="catalog-page">
+        <section className="catalog-hero" aria-labelledby="catalog-title">
+          <div className="catalog-hero-copy">
+            <p className="eyebrow">METAL FINISHING EQUIPMENT</p>
+            <h1 id="catalog-title">下地処理から<br />粉体塗装、焼付まで。</h1>
+            <p className="catalog-hero-tagline">現場に合う一連の設備を、ひとつの窓口で。</p>
+            <p className="catalog-hero-lead">
+              大型ウェットブラストマシン、粉体塗装機、粉体塗装用乾燥炉。
+              ワークの大きさ、仕上がり、処理量、設置環境を確認し、単体導入から工程づくりまでご相談いただけます。
             </p>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#consult">設備一式を相談する</a>
+              <a className="button button-ghost" href="/wetblast">ウェットブラストを見る</a>
+            </div>
+            <p className="catalog-hero-note">ご相談後、必要な仕様と設置条件を整理して正式見積をご案内します。</p>
           </div>
 
-          <div className="feature-zigzag">
-            <article className="feature-row">
-              <figure className="feature-image portrait-image">
-                <img src="/assets/wetblast-wheel.webp" alt="作業室にホイールを収めた実機写真" width="900" height="1200" loading="lazy" />
-                <figcaption>実機写真 / ホイール収容例</figcaption>
-              </figure>
-              <div className="feature-copy">
-                <span className="feature-number">01 / CAPACITY</span>
-                <h3>ホイールが収まる、<br />大型キャビネット。</h3>
-                <p>
-                  大型エンジンやホイールなど、これまで小型機では扱いづらかったワークに対応。
-                  適合は対象物の寸法・重量を事前に確認します。
-                </p>
-                <a className="text-link" href="#inquiry">処理したい部品を見せて相談する <span>→</span></a>
-              </div>
-            </article>
-
-            <article className="feature-row feature-row-reverse">
-              <figure className="feature-image landscape-image">
-                <img src="/assets/wetblast-wiper.webp" alt="電動ワイパーを備えた大型のぞき窓" width="1000" height="1250" loading="lazy" />
-                <figcaption>実機写真 / 電動ワイパー搭載</figcaption>
-              </figure>
-              <div className="feature-copy">
-                <span className="feature-number">02 / VISIBILITY</span>
-                <h3>ワイパーで拭き取り、<br />視界を確保。</h3>
-                <p>
-                  のぞき窓に電動ワイパーを搭載。水滴やミストを拭き取りながら、ワークの状態を確認して作業できます。
-                </p>
-                <a className="text-link" href="#inquiry">デモで動作を確認する <span>→</span></a>
-              </div>
-            </article>
-          </div>
+          <figure className="catalog-hero-visual">
+            <img src="/equipment-lineup.png" alt="大型ウェットブラスト、粉体塗装機、粉体塗装用乾燥炉の設備構成イメージ" width="1720" height="909" fetchPriority="high" />
+            <figcaption>製品構成イメージ / 実際の仕様・外観とは異なります</figcaption>
+            <div className="catalog-hero-index" aria-hidden="true">
+              <span>01 WET BLAST</span><span>02 POWDER COATING</span><span>03 CURING OVEN</span>
+            </div>
+          </figure>
         </section>
 
-        <section className="section proof-section" aria-labelledby="proof-title">
-          <div className="section-heading proof-heading">
-            <div>
-              <Eyebrow>REAL MACHINE / REAL SCALE</Eyebrow>
-              <h2 id="proof-title">見て、入れて、動かして。<br />導入前に確かめられます。</h2>
-            </div>
-            <p>生成イメージではなく、実際の製品写真でサイズと構造をご確認ください。</p>
-          </div>
-          <div className="proof-grid">
-            <figure className="proof-main">
-              <img src="/assets/wetblast-open.webp" alt="扉を開けた大型ウェットブラストマシンの作業室" width="1000" height="1250" loading="lazy" />
-              <figcaption><span>01</span> 扉開放時の作業室</figcaption>
-            </figure>
-            <figure className="proof-side">
-              <img src="/assets/wetblast-side.webp" alt="大型ウェットブラストマシンの側面と配管" width="1000" height="1300" loading="lazy" />
-              <figcaption><span>02</span> 側面構造・配管</figcaption>
-            </figure>
-            <div className="proof-cta">
-              <p>お持ちのワークが入るか、<br />写真と寸法から確認します。</p>
-              <a className="button button-primary" href="#inquiry">デモ・適合確認を相談</a>
-            </div>
-          </div>
+        <section className="catalog-status-strip" aria-label="取扱状況">
+          <div><span>01 / 販売中</span><strong>大型ウェットブラスト</strong></div>
+          <div><span>02 / 取扱準備中</span><strong>粉体塗装機</strong></div>
+          <div><span>03 / 取扱準備中</span><strong>粉体塗装用乾燥炉</strong></div>
         </section>
 
-        <section className="section section-light spec-section" id="spec">
-          <div className="spec-layout">
-            <div className="spec-main">
-              <Eyebrow dark>SPECIFICATION</Eyebrow>
-              <h2>主な仕様</h2>
-              <dl className="spec-table">
-                {specs.map(([term, description]) => (
-                  <div key={term}>
-                    <dt>{term}</dt>
-                    <dd>{description}</dd>
-                  </div>
-                ))}
+        <section className="catalog-section catalog-process" id="process">
+          <div className="catalog-heading catalog-heading-split">
+            <div><p className="eyebrow eyebrow-dark">PROCESS DESIGN</p><h2>設備単体ではなく、<br />工程全体で考える。</h2></div>
+            <p>設備同士の大きさ、処理能力、動線、電源・エア・換気条件の食い違いを減らし、現場に必要な構成を整理します。</p>
+          </div>
+
+          <ol className="process-map">
+            <li><span className="process-no">01</span><small>SURFACE PREP</small><h3>下地処理</h3><p>ウェットブラストで、塗装前の洗浄・表面処理を行います。</p></li>
+            <li><span className="process-no">02</span><small>POWDER COATING</small><h3>粉体塗装</h3><p>ワーク、粉体、色替え、処理量に合わせて塗装設備を検討します。</p></li>
+            <li><span className="process-no">03</span><small>CURING</small><h3>焼付</h3><p>ワーク寸法と粉体メーカー指定条件に合わせて、乾燥炉を検討します。</p></li>
+          </ol>
+          <p className="process-note">※材質、粉体塗料、要求品質により、洗浄・乾燥・防錆・マスキング・冷却等の工程が別途必要です。</p>
+          <a className="text-link" href="/?equipment=line#consult">工程全体を相談する <span>→</span></a>
+        </section>
+
+        <section className="catalog-section catalog-lineup" id="lineup">
+          <div className="catalog-heading">
+            <p className="eyebrow">EQUIPMENT LINEUP</p>
+            <h2>取扱機材</h2>
+            <p>確定仕様と、案件ごとに検討する項目を分けてご案内します。</p>
+          </div>
+
+          <article className="catalog-product product-wetblast" id="wetblast-product">
+            <figure className="catalog-product-image">
+              <img src="/assets/wetblast-wheel.webp" alt="作業室にホイールを収めた大型ウェットブラストの実機写真" width="900" height="1200" loading="lazy" />
+              <figcaption>実機写真 / ホイール収容例</figcaption>
+            </figure>
+            <div className="catalog-product-copy">
+              <div className="product-status is-selling"><span>01</span> 販売中・実機デモ受付</div>
+              <p className="product-type">LARGE WET BLAST MACHINE</p>
+              <h3>ホイールや大型エンジンに対応する、<br />大型ウェットブラスト。</h3>
+              <p>大型ワークを収められるキャビネット、本体電源AC100V、作業中の視界確保を助ける電動ワイパーを搭載。実機デモと設置条件の確認後、正式見積をご案内します。</p>
+              <dl className="catalog-spec-list">
+                <div><dt>外形寸法</dt><dd>W1000 × D800 × H1900mm</dd></div>
+                <div><dt>本体電源</dt><dd>AC100V</dd></div>
+                <div><dt>推奨コンプレッサー</dt><dd>5.5kW</dd></div>
+                <div><dt>視認装備</dt><dd>電動ワイパー</dd></div>
               </dl>
-              <div className="compressor-alert">
-                <span className="alert-label">重要 / COMPRESSOR</span>
-                <h3>本体は100V。噴射には、別途圧縮空気が必要です。</h3>
-                <p>
-                  推奨コンプレッサーは5.5kWです。100Vコンプレッサーや200V・2.2kW機では、
-                  推奨条件に比べて噴射力・処理速度が低下します。お持ちの型式を事前に確認します。
-                </p>
+              <div className="catalog-price"><span>販売価格</span><strong>898,000<small>円</small></strong><em>税区分・送料等は正式見積</em></div>
+              <p className="product-caution">100Vコンプレッサーや200V・2.2kW機では、推奨条件に比べ噴射力・処理速度が低下します。</p>
+              <div className="product-actions">
+                <a className="button button-primary" href="/wetblast">製品詳細・実機デモ</a>
+                <a className="button button-ghost-light" href="/?equipment=wetblast#consult">この設備を相談</a>
               </div>
-              <p className="spec-pending">
-                正式見積時に確認・明記：作業室内寸、最大ワーク寸法・重量、機械重量、必要圧力・吐出量、
-                ノズル径、給排水条件、付属品、保証、送料・搬入設置条件。
-              </p>
             </div>
+          </article>
 
-            <aside className="fit-check">
-              <span className="fit-check-label">PRE-INSTALLATION CHECK</span>
-              <h3>その設備で使えるか、先に確認します。</h3>
-              <ul>
-                <li><span>01</span> 設置スペース</li>
-                <li><span>02</span> 搬入口・段差</li>
-                <li><span>03</span> コンプレッサー型式</li>
-                <li><span>04</span> ワークの寸法・重量</li>
-                <li><span>05</span> 納品先・荷下ろし環境</li>
-              </ul>
-              <p>寸法や型式が分からない場合も、写真を見ながら整理できます。</p>
-              <a className="button button-ghost-light" href="#inquiry">設置できるか相談する</a>
-            </aside>
-          </div>
+          <article className="catalog-product product-powder">
+            <figure className="catalog-product-image catalog-generated-image powder-crop">
+              <img src="/equipment-lineup.png" alt="粉体塗装機を含む設備構成イメージ" width="1720" height="909" loading="lazy" />
+              <figcaption>製品構成イメージ / 実機写真ではありません</figcaption>
+            </figure>
+            <div className="catalog-product-copy">
+              <div className="product-status is-planning"><span>02</span> 取扱準備中・導入相談受付</div>
+              <p className="product-type">POWDER COATING SYSTEM</p>
+              <h3>塗るものと仕上がりから考える、<br />粉体塗装機。</h3>
+              <p>対象ワークの材質・寸法、使用する粉体、色替え頻度、処理量、作業スペースを伺い、必要な設備構成を整理します。</p>
+              <div className="planning-block">
+                <span>案件ごとに確認</span>
+                <ul><li>ワークの材質・寸法・重量</li><li>色・質感・膜厚などの仕上がり</li><li>一日あたりの処理量・色替え頻度</li><li>電源・圧縮空気・接地条件</li><li>ブース・換気・集塵環境</li></ul>
+              </div>
+              <p className="planning-note">仕様・価格・発売時期は策定中です。現時点では工程・導入相談のみ受け付けています。</p>
+              <a className="button button-primary" href="/?equipment=powder#consult">粉体塗装の条件を相談する</a>
+            </div>
+          </article>
+
+          <article className="catalog-product product-oven">
+            <figure className="catalog-product-image catalog-generated-image oven-crop">
+              <img src="/equipment-lineup.png" alt="粉体塗装用乾燥炉を含む設備構成イメージ" width="1720" height="909" loading="lazy" />
+              <figcaption>製品構成イメージ / 実機写真ではありません</figcaption>
+            </figure>
+            <div className="catalog-product-copy">
+              <div className="product-status is-planning"><span>03</span> 取扱準備中・導入相談受付</div>
+              <p className="product-type">POWDER CURING OVEN</p>
+              <h3>ワーク寸法と焼付条件から考える、<br />粉体塗装用乾燥炉。</h3>
+              <p>炉内に入れる最大ワーク、必要温度・保持時間、一回の処理量、設置スペース、搬入経路、利用可能な熱源を確認し、受注仕様を検討します。</p>
+              <div className="planning-block">
+                <span>案件ごとに確認</span>
+                <ul><li>最大ワーク寸法・重量・数量</li><li>粉体メーカー指定の焼付条件</li><li>炉内有効寸法・扉開口</li><li>電源・熱源・換気・排気条件</li><li>設置場所・搬入経路・安全設備</li></ul>
+              </div>
+              <p className="planning-note">溶剤塗料や可燃性物質の加熱用途を示すものではありません。仕様・価格・発売時期は策定中です。</p>
+              <a className="button button-primary" href="/?equipment=oven#consult">乾燥炉の仕様を相談する</a>
+            </div>
+          </article>
         </section>
 
-        <section className="section flow-section" id="flow">
-          <div className="flow-layout">
-            <div className="flow-intro">
-              <Eyebrow>BUILD TO ORDER</Eyebrow>
-              <h2>在庫を積まず、<br />条件を合わせて製作。</h2>
-              <p>
-                大型機だからこそ、完成品在庫を多く持たず受注枠制に。
-                導入前の確認を丁寧に行い、過剰な在庫コストを抑えた価格につなげます。
-              </p>
-              <p className="flow-note">予約金額、納期、変更・キャンセル条件は、入金前に書面で明示します。</p>
+        <section className="catalog-section catalog-support" id="support">
+          <div className="catalog-support-layout">
+            <div className="catalog-support-copy">
+              <p className="eyebrow">INTRODUCTION SUPPORT</p>
+              <h2>必要な設備が決まっていなくても、<br />ご相談いただけます。</h2>
+              <p>現在の工程、処理したいワーク、目標とする仕上がりから、必要な設備と確認事項を整理します。</p>
             </div>
-            <ol className="flow-list">
-              {orderSteps.map((step, index) => (
-                <li key={step.number} style={{ "--delay": `${index * 70}ms` } as CSSProperties}>
-                  <span className="flow-number">{step.number}</span>
-                  <div><h3>{step.title}</h3><p>{step.text}</p></div>
-                </li>
-              ))}
+            <ol className="catalog-support-list">
+              <li><span>01</span><div><h3>用途を確認</h3><p>ワーク、材質、寸法、重量、処理量、希望仕上がりを伺います。</p></div></li>
+              <li><span>02</span><div><h3>設置条件を整理</h3><p>スペース、搬入口、電源、エア、給排水、換気・集塵条件を確認します。</p></div></li>
+              <li><span>03</span><div><h3>仕様・範囲を決定</h3><p>本体、周辺設備、搬入・設置、工事、試運転等の範囲を明確にします。</p></div></li>
+              <li><span>04</span><div><h3>正式見積</h3><p>価格、納期、保証、支払条件、変更・キャンセル条件を書面で提示します。</p></div></li>
             </ol>
           </div>
         </section>
 
-        <section className="section section-light faq-section" id="faq">
+        <section className="catalog-section catalog-faq" id="equipment-faq">
           <div className="faq-layout">
-            <div className="faq-heading">
-              <Eyebrow dark>FAQ</Eyebrow>
-              <h2>導入前の<br />よくある質問</h2>
-              <p>不明な点はデモ相談で一緒に確認できます。</p>
-            </div>
+            <div className="faq-heading"><p className="eyebrow eyebrow-dark">FAQ</p><h2>機材導入の<br />よくある質問</h2><p>不明な点は総合相談で一緒に整理できます。</p></div>
             <div className="faq-list">
-              {faqs.map((item, index) => (
-                <details key={item.q} open={index === 0}>
-                  <summary><span>Q</span>{item.q}<b aria-hidden="true">＋</b></summary>
-                  <div className="faq-answer"><span>A</span><p>{item.a}</p></div>
-                </details>
+              {equipmentFaqs.map((item, index) => (
+                <details key={item.q} open={index === 0}><summary><span>Q</span>{item.q}<b aria-hidden="true">＋</b></summary><div className="faq-answer"><span>A</span><p>{item.a}</p></div></details>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section inquiry-section" id="inquiry">
-          <div className="inquiry-intro">
-            <Eyebrow>DEMO / FIT CHECK</Eyebrow>
-            <h2>まずは実機で、<br />確かめてください。</h2>
-            <p>
-              来訪デモ、オンライン実演、テスト加工のご相談に対応。
-              分からない項目は「不明」で構いません。
-            </p>
-            <div className="inquiry-points">
-              <div><span>01</span><p>入力だけでは注文・予約金の支払いは確定しません。</p></div>
-              <div><span>02</span><p>用途と設備条件を確認後、正式見積をご案内します。</p></div>
+        <section className="catalog-section catalog-consult" id="consult">
+          <div className="catalog-consult-intro">
+            <p className="eyebrow">EQUIPMENT CONSULTATION</p>
+            <h2>設備と工程を、<br />まとめて相談。</h2>
+            <p>分からない項目は「不明」で構いません。対象ワークと現在の困りごとから確認を始めます。</p>
+            <div className="consult-safety">
+              <strong>ご相談前に</strong>
+              <p>粉体塗装設備と乾燥炉は、電源・圧縮空気・接地・換気・集塵・排気・防火等の条件確認が必要です。</p>
             </div>
           </div>
-          <LeadForm />
+          <EquipmentLeadForm />
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="footer-brand">
-          <span className="brand-mark">WB</span>
-          <div><strong>LARGE WET BLAST</strong><small>大型ウェットブラストマシン</small></div>
+      <footer className="catalog-footer">
+        <div className="footer-brand"><span className="brand-mark">SF</span><div><strong>SURFACE FINISH SYSTEMS</strong><small>表面処理・粉体塗装設備</small></div></div>
+        <div className="footer-status"><span>SALES CONTACT</span><strong>販売元情報は正式公開前に設定</strong></div>
+        <div className="catalog-footer-notes">
+          <p>※大型ウェットブラストの販売価格898,000円は、税区分・送料・搬入設置等を正式見積に明記します。</p>
+          <p>※粉体塗装機・乾燥炉は仕様および販売条件を策定中です。掲載画像は製品構成イメージであり、実際の製品とは異なります。</p>
+          <p>※必要な電源、圧縮空気、換気・集塵、排気、接地、消防・労働安全上の条件は設置先ごとに確認します。</p>
+          <p>※保証、支払、予約金、納期、変更・キャンセル条件は、入金前に書面で提示します。</p>
         </div>
-        <div className="footer-status">
-          <span>販売元情報 / CONTACT</span>
-          <strong>正式公開前に設定</strong>
-        </div>
-        <div className="footer-notes">
-          <p>※販売価格898,000円。税区分、送料、搬入・設置、研磨材、コンプレッサー、オプション等は正式見積に明記します。</p>
-          <p>※噴射性能はコンプレッサー能力、ノズル、圧力、研磨材、対象物により異なります。</p>
-          <p>※仕様・外観は改良のため変更する場合があります。正式な取引条件は見積書・注文条件を優先します。</p>
-        </div>
-        <p className="copyright">© LARGE WET BLAST SYSTEM</p>
+        <p className="copyright">© SURFACE FINISH SYSTEMS</p>
       </footer>
 
-      <a className="mobile-sticky-cta" href="#inquiry">実機デモを予約する</a>
+      <a className="mobile-sticky-cta" href="#consult">設備導入を相談する</a>
     </>
   );
 }
