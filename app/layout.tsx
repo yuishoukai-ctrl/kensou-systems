@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: base,
     title,
     description,
-    icons: { icon: "/favicon.png" },
+    icons: { icon: "/favicon-kensou.png" },
     alternates: { canonical: base },
     robots: { index: false, follow: false },
     openGraph: {

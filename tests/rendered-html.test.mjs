@@ -65,6 +65,7 @@ test("ships optimized product assets without starter preview code", async () => 
   ]);
 
   assert.match(page, /KENSO SYSTEMS/);
+  assert.match(page, /logo-kensou-systems\.png/);
   assert.match(page, /sandblast-concept\.webp/);
   assert.match(page, /<EquipmentLeadForm \/>/);
   assert.match(layout, /generateMetadata/);
@@ -73,6 +74,7 @@ test("ships optimized product assets without starter preview code", async () => 
   assert.deepEqual(
     assets.sort(),
     [
+      "logo-kensou-systems.png",
       "sandblast-concept.webp",
       "wetblast-hero.webp",
       "wetblast-open.webp",
@@ -83,6 +85,7 @@ test("ships optimized product assets without starter preview code", async () => 
   );
   await Promise.all([
     access(new URL("../public/og-kensou-systems.png", import.meta.url)),
+    access(new URL("../public/favicon-kensou.png", import.meta.url)),
     access(new URL("../public/favicon.png", import.meta.url)),
     access(new URL("../public/equipment-lineup.png", import.meta.url)),
   ]);

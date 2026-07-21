@@ -37,8 +37,7 @@ export default function EquipmentCatalogPage() {
     <>
       <header className="catalog-header">
         <a className="catalog-brand" href="#top" aria-label="研装システムズ トップへ">
-          <span className="brand-mark">KS</span>
-          <span><strong>KENSO SYSTEMS</strong><small>研装システムズ</small></span>
+          <img className="brand-logo" src="/assets/logo-kensou-systems.png" alt="" width="1400" height="366" />
         </a>
         <nav className="catalog-nav" aria-label="機材販売ページ ナビゲーション">
           <a href="#lineup">製品一覧</a>
@@ -229,7 +228,7 @@ export default function EquipmentCatalogPage() {
       </main>
 
       <footer className="catalog-footer">
-        <div className="footer-brand"><span className="brand-mark">KS</span><div><strong>KENSO SYSTEMS</strong><small>研装システムズ</small></div></div>
+        <div className="footer-brand"><img className="brand-logo" src="/assets/logo-kensou-systems.png" alt="研装システムズ｜KENSO SYSTEMS" width="1400" height="366" loading="lazy" /></div>
         <div className="footer-status"><span>SALES CONTACT</span><strong>研装システムズ</strong></div>
         <div className="catalog-footer-notes">
           <p>※大型ウェットブラストの販売価格898,000円は、税区分・送料・搬入設置等を正式見積に明記します。</p>

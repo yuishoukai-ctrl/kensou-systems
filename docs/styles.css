@@ -60,6 +60,7 @@ button, input, textarea { border-radius: 0; }
   backdrop-filter: blur(12px);
 }
 .brand { display: inline-flex; gap: 13px; align-items: center; width: fit-content; }
+.brand-logo { display: block; width: auto; height: 54px; object-fit: contain; }
 .brand-mark {
   display: grid;
   place-items: center;
@@ -253,6 +254,7 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.05em; line-height: 1.13; }
 .summary-help { margin: 8px 0 0; color: var(--muted); font-size: 10px; }
 
 .site-footer { display: grid; grid-template-columns: 1fr auto; gap: 36px 70px; padding: 68px max(24px, calc((100vw - var(--max-width)) / 2)) 40px; color: var(--white); background: var(--ink); border-top: 1px solid var(--line-dark); }
+.footer-brand .brand-logo { height: 68px; }
 .footer-contact { display: flex; flex-direction: column; align-items: flex-end; }
 .footer-contact span { color: var(--cyan); font-size: 9px; font-weight: 850; letter-spacing: .14em; }
 .footer-contact strong { color: #bfd0d6; font-size: 13px; }
@@ -273,7 +275,8 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.05em; line-height: 1.13; }
   body { padding-bottom: 68px; }
   .site-header { min-height: var(--header-height); padding: 0 20px; }
   .header-cta { display: none; }
-  .brand-copy strong { font-size: 12px; }
+  .brand-logo { height: 44px; }
+  .footer-brand .brand-logo { height: 58px; }
   .hero { display: flex; min-height: 0; flex-direction: column; }
   .hero-copy { order: 1; padding: 64px 20px 52px; }
   .hero h1 { font-size: clamp(44px, 13vw, 64px); }

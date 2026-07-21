@@ -93,6 +93,13 @@ section[id] {
   min-height: 48px;
 }
 
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 54px;
+  object-fit: contain;
+}
+
 .brand-mark {
   display: inline-grid;
   place-items: center;
@@ -1318,6 +1325,10 @@ section[id] {
   align-items: center;
 }
 
+.footer-brand .brand-logo {
+  height: 68px;
+}
+
 .footer-brand > div {
   display: flex;
   flex-direction: column;
@@ -1730,6 +1741,10 @@ section[id] {
   align-items: center;
   width: fit-content;
   min-height: 52px;
+}
+
+.catalog-brand .brand-logo {
+  height: 58px;
 }
 
 .catalog-brand > span:last-child {
@@ -2469,6 +2484,10 @@ section[id] {
     display: none;
   }
 
+  .catalog-brand .brand-logo {
+    height: 46px;
+  }
+
   .catalog-hero {
     display: flex;
     min-height: 0;
@@ -2586,6 +2605,11 @@ section[id] {
 }
 
 @media (max-width: 520px) {
+  .brand .brand-logo,
+  .catalog-brand .brand-logo {
+    height: 42px;
+  }
+
   .catalog-brand strong {
     font-size: 9px;
   }
