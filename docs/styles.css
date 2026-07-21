@@ -242,6 +242,7 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.015em; line-height: 1.2; }
 .training-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .training-card { display: flex; min-width: 0; padding: 36px; flex-direction: column; background: var(--white); border: 1px solid var(--line); }
 .training-card-featured { border-top: 5px solid var(--cyan-dark); }
+.training-card-cerakote { background: #fffaf4; border-top: 5px solid var(--orange); }
 .training-card-onsite { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(230px, 4fr) minmax(320px, 5fr) minmax(230px, 3fr); gap: 38px; align-items: start; }
 .training-card-head { display: flex; gap: 16px; align-items: center; justify-content: space-between; margin-bottom: 25px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
 .training-card-head span { color: var(--cyan-dark); font-size: 10px; font-weight: 850; letter-spacing: .12em; }
@@ -254,6 +255,9 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.015em; line-height: 1.2; }
 .training-topics span { color: var(--muted); font-size: 12px; line-height: 1.7; }
 .training-card-foot { margin-top: auto; }
 .training-card-foot > p { min-height: 3.5em; margin: 12px 0 21px; color: var(--muted); font-size: 11px; line-height: 1.75; }
+.cerakote-performance { padding: 17px 18px; background: #f4e7d9; border-left: 4px solid var(--orange); }
+.cerakote-performance > span { display: block; margin-bottom: 6px; color: var(--ink); font-size: 12px; font-weight: 850; }
+.cerakote-performance > p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.75; }
 .training-price { display: flex; gap: 20px; align-items: baseline; padding-top: 4px; }
 .training-price > span { color: var(--muted); font-size: 11px; }
 .training-price strong { color: var(--ink); font-size: 28px; }

@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
-type EquipmentKey = "大型ウェットブラスト" | "サンドブラスト（開発予定）" | "粉体塗装機" | "粉体塗装用乾燥炉" | "一連設備" | "内製化スタートパック" | "開業サポートパック" | "出張実地講座" | "未定・相談したい";
+type EquipmentKey = "大型ウェットブラスト" | "サンドブラスト（開発予定）" | "粉体塗装機" | "粉体塗装用乾燥炉" | "一連設備" | "内製化スタートパック" | "開業サポートパック" | "出張実地講座" | "セラコート実技講習" | "未定・相談したい";
 
 type EquipmentLead = {
   equipments: EquipmentKey[];
@@ -31,6 +31,7 @@ const equipmentOptions: EquipmentKey[] = [
   "内製化スタートパック",
   "開業サポートパック",
   "出張実地講座",
+  "セラコート実技講習",
   "未定・相談したい",
 ];
 
@@ -61,6 +62,7 @@ const queryEquipment: Record<string, EquipmentKey> = {
   internalization: "内製化スタートパック",
   opening: "開業サポートパック",
   onsite: "出張実地講座",
+  cerakote: "セラコート実技講習",
 };
 
 const summaryLabels: Array<[keyof Omit<EquipmentLead, "equipments">, string]> = [

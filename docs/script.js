@@ -74,6 +74,7 @@
     internalization: '内製化スタートパック',
     opening: '開業サポートパック',
     onsite: '出張実地講座',
+    cerakote: 'セラコート実技講習',
   };
   const equipmentName = equipmentMap[equipmentKey];
   if (equipmentName) {
