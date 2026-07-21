@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "粉体塗装用乾燥炉｜研装システムズ",
-  description: "研装システムズの粉体塗装用乾燥炉。120サイズと180サイズの予定仕様、導入時の確認項目をご案内します。",
+  description: "レストアショップ向けの粉体塗装用乾燥炉。小規模施工向け120サイズと、バイクフレーム・自動車ホイール4本に対応する180サイズをご案内します。",
 };
 
 export default function DryingOvenPage() {
@@ -25,7 +25,7 @@ export default function DryingOvenPage() {
             <p className="eyebrow">粉体塗装・焼付設備</p>
             <div className="product-status is-planning"><span>04</span> 仕様相談受付中</div>
             <h1 id="oven-title">粉体塗装用<br />乾燥炉</h1>
-            <p className="oven-detail-lead">ワークサイズに合わせて選べる2サイズ。粉体塗装後の焼付工程を、処理量や設置条件に合わせて検討します。</p>
+            <p className="oven-detail-lead">自動車・バイクのレストアショップへ。小物パーツやホイールからバイクフレームまで、粉体塗装後の焼付工程に合わせて選べる2サイズです。</p>
             <div className="oven-detail-actions"><a className="button button-primary" href="#models">サイズを見る</a><a className="button button-ghost-light" href="/?equipment=oven#consult">仕様を相談する</a></div>
           </div>
           <figure className="oven-detail-visual">
@@ -37,8 +37,8 @@ export default function DryingOvenPage() {
         <section className="oven-detail-section" id="models" aria-labelledby="models-title">
           <div className="oven-detail-heading"><div><p className="eyebrow">予定サイズ</p><h2 id="models-title">選べる<br />2サイズ。</h2></div><p>現時点で予定している寸法です。実際に炉内へ入れるワークの外形・重量・数量を確認し、扉開口や炉内有効寸法を含めて正式仕様をご案内します。</p></div>
           <div className="oven-models">
-            <article className="oven-model"><span className="oven-model-label">120サイズ</span><h3>炉内内寸<br />約1200 × 1200 × 1200mm</h3><strong className="oven-model-price">販売価格 1,200,000円（税別）</strong><dl className="oven-model-spec"><div><dt>最高温度</dt><dd>220℃</dd></div><div><dt>電源</dt><dd>三相200V</dd></div><div><dt>消費電力</dt><dd>6kW</dd></div></dl><p>120cm四方の炉内を予定しています。ワーク寸法と治具を含め、必要な余裕を確認します。</p></article>
-            <article className="oven-model"><span className="oven-model-label">180サイズ</span><h3>横幅 約1700mm<br />奥行 約700mm<br />高さ 約2000mm</h3><strong className="oven-model-price">販売価格 1,800,000円（税別）</strong><dl className="oven-model-spec"><div><dt>最高温度</dt><dd>220℃</dd></div><div><dt>電源</dt><dd>三相200V</dd></div><div><dt>消費電力</dt><dd>10～15kW</dd></div></dl><p>炉内有効寸法は確認中です。対象ワークと設置場所を伺い、確定仕様をご案内します。</p></article>
+            <article className="oven-model"><span className="oven-model-label">120サイズ</span><h3>炉内内寸<br />約1200 × 1200 × 1200mm</h3><strong className="oven-model-price">販売価格 1,200,000円（税別）</strong><dl className="oven-model-spec"><div><dt>最高温度</dt><dd>220℃</dd></div><div><dt>電源</dt><dd>三相200V</dd></div><div><dt>消費電力</dt><dd>6kW</dd></div></dl><div className="oven-use-cases"><strong>こんなお客様におすすめ</strong><ul><li>小規模にパーツをパウダーコートしたい方</li><li>4ミニを扱うカスタム・レストアショップ</li><li>バイクホイール前後や小物パーツの塗装</li></ul></div><p>120cm四方の炉内です。ワーク寸法と治具を含め、必要な余裕を確認します。</p></article>
+            <article className="oven-model"><span className="oven-model-label">180サイズ</span><h3>横幅 約1700mm<br />奥行 約700mm<br />高さ 約2000mm</h3><strong className="oven-model-price">販売価格 1,800,000円（税別）</strong><dl className="oven-model-spec"><div><dt>最高温度</dt><dd>220℃</dd></div><div><dt>電源</dt><dd>三相200V</dd></div><div><dt>消費電力</dt><dd>10～15kW</dd></div></dl><div className="oven-use-cases"><strong>レストアショップにおすすめ</strong><ul><li>バイクフレームを丸ごと焼付</li><li>自動車ホイールを一度に4本焼付</li><li>大きなパーツや複数部品のまとめ施工</li></ul></div><p>ワーク形状や治具によって配置が変わるため、ご購入前に対象ワークの寸法を確認します。</p></article>
           </div>
           <p className="oven-spec-note">掲載寸法は現時点の予定仕様です。扉開口、電源・熱源、最高温度、保持時間、設置・排気条件を確認します。掲載価格は税別です。送料・搬入設置費等は正式見積に明記します。</p>
         </section>

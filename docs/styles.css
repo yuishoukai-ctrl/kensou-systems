@@ -250,6 +250,9 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.015em; line-height: 1.2; }
 .oven-model-spec > div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .oven-model-spec dt { color: #68797f; font-size: 12px; }
 .oven-model-spec dd { margin: 0; color: var(--ink); font-size: 14px; font-weight: 700; }
+.oven-use-cases { margin: 0 0 20px; padding: 20px; background: #eef3f3; border-left: 4px solid var(--cyan-dark); }
+.oven-use-cases > strong { display: block; margin-bottom: 10px; color: var(--ink); font-size: 13px; }
+.oven-use-cases ul { margin: 0; padding-left: 1.25em; color: #44565d; font-size: 13px; line-height: 1.8; }
 .oven-model p { margin: 0; color: #596a70; line-height: 1.8; }
 .oven-spec-note { margin: 26px 0 0; padding: 19px 22px; color: #596a70; background: #e9eeee; font-size: 12px; line-height: 1.8; }
 .oven-consult { display: grid; grid-template-columns: minmax(320px, 5fr) minmax(480px, 7fr); gap: 70px; padding: 96px max(24px, calc((100vw - var(--max-width)) / 2)); }

@@ -44,6 +44,8 @@ test("server-renders the equipment catalog", async () => {
   assert.match(html, /最高温度 220℃／三相200V・10～15kW/);
   assert.match(html, /1,200,000円（税別）/);
   assert.match(html, /高さ 約2000mm/);
+  assert.match(html, /4ミニショップ/);
+  assert.match(html, /自動車ホイール4本/);
   assert.match(html, /サンドブラスト/);
   assert.match(html, /AI生成コンセプト画像/);
   assert.match(html, /推奨コンプレッサー/);
@@ -71,8 +73,10 @@ test("server-renders the drying oven detail page", async () => {
   assert.match(html, /10～15kW/);
   assert.match(html, /1,800,000円（税別）/);
   assert.match(html, /高さ 約2000mm/);
+  assert.match(html, /バイクフレームを丸ごと焼付/);
+  assert.match(html, /自動車ホイールを一度に4本焼付/);
   assert.match(html, /powder-curing-oven-generated\.webp/);
-  assert.match(html, /炉内有効寸法は確認中/);
+  assert.match(html, /ご購入前に対象ワークの寸法を確認します/);
 });
 
 test("keeps the wet-blast product detail page", async () => {

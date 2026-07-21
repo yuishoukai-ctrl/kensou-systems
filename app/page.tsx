@@ -178,8 +178,8 @@ export default function EquipmentCatalogPage() {
               <h3>ワーク寸法と焼付条件から考える、<br />粉体塗装用乾燥炉。</h3>
               <p>ワーク寸法に合わせて選べる2サイズをご用意する予定です。必要温度・保持時間、処理量、設置スペース、搬入経路、利用可能な熱源を確認し、受注仕様を検討します。</p>
               <div className="oven-size-grid" aria-label="乾燥炉の予定サイズ">
-                <div><span>120サイズ</span><strong>炉内内寸 約1200 × 1200 × 1200mm</strong><b>販売価格 1,200,000円（税別）</b><small className="oven-power-spec">最高温度 220℃／三相200V・6kW</small><small>120cm四方の炉内</small></div>
-                <div><span>180サイズ</span><strong>横幅 約1700 × 奥行 約700 × 高さ 約2000mm</strong><b>販売価格 1,800,000円（税別）</b><small className="oven-power-spec">最高温度 220℃／三相200V・10～15kW</small><small>炉内有効寸法は確認中</small></div>
+                <div><span>120サイズ</span><strong>炉内内寸 約1200 × 1200 × 1200mm</strong><b>販売価格 1,200,000円（税別）</b><small className="oven-power-spec">最高温度 220℃／三相200V・6kW</small><small>小規模施工・4ミニショップ・バイクホイール前後におすすめ</small></div>
+                <div><span>180サイズ</span><strong>横幅 約1700 × 奥行 約700 × 高さ 約2000mm</strong><b>販売価格 1,800,000円（税別）</b><small className="oven-power-spec">最高温度 220℃／三相200V・10～15kW</small><small>バイクフレームや自動車ホイール4本の焼付におすすめ</small></div>
               </div>
               <div className="planning-block">
                 <span>案件ごとに確認</span>
