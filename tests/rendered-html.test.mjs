@@ -55,6 +55,13 @@ test("server-renders the equipment catalog", async () => {
   assert.match(html, /5\.5kW/);
   assert.match(html, /電動ワイパー/);
   assert.match(html, /設備一式を相談する/);
+  assert.match(html, /セラコート実技講習/);
+  assert.match(html, /220,000/);
+  assert.match(html, /1日・1社2名まで/);
+  assert.match(html, /代表シリーズ選定表/);
+  assert.match(html, /H-Series/);
+  assert.match(html, /C-Series/);
+  assert.match(html, /V-Series/);
   assert.match(html, /連絡先の入力へ/);
   assert.match(html, /href="tel:05017850018"/);
   assert.match(html, /050-1785-0018/);
@@ -93,10 +100,11 @@ test("keeps the wet-blast product detail page", async () => {
 });
 
 test("ships optimized product assets without starter preview code", async () => {
-  const [page, layout, packageJson, assets] = await Promise.all([
+  const [page, layout, packageJson, docsIndex, assets] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readFile(new URL("../docs/index.html", import.meta.url), "utf8"),
     readdir(new URL("../public/assets/", import.meta.url)),
   ]);
 
@@ -106,6 +114,8 @@ test("ships optimized product assets without starter preview code", async () => 
   assert.match(page, /<EquipmentLeadForm \/>/);
   assert.match(layout, /generateMetadata/);
   assert.match(layout, /robots:\s*\{ index: true, follow: true \}/);
+  assert.match(docsIndex, /220,000/);
+  assert.match(docsIndex, /代表シリーズ選定表/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.deepEqual(
     assets.sort(),

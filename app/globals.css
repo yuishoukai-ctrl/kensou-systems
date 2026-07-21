@@ -2560,6 +2560,131 @@ section[id] {
   line-height: 1.8;
 }
 
+.cerakote-training-price {
+  margin-top: 18px;
+}
+
+.cerakote-series-guide {
+  margin-top: 54px;
+  padding: 42px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--orange);
+}
+
+.cerakote-series-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(280px, 5fr);
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.cerakote-series-heading h3 {
+  margin: 0;
+  font-size: clamp(30px, 3.4vw, 48px);
+  letter-spacing: -0.05em;
+}
+
+.cerakote-series-heading > p {
+  margin: 0 0 5px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.cerakote-series-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+}
+
+.cerakote-series-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.cerakote-series-table th,
+.cerakote-series-table td {
+  padding: 20px 22px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.cerakote-series-table tr > *:last-child {
+  border-right: 0;
+}
+
+.cerakote-series-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.cerakote-series-table thead th {
+  padding-block: 13px;
+  color: var(--white);
+  background: var(--navy-2);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.cerakote-series-table tbody th {
+  width: 135px;
+  color: var(--white);
+  background: var(--cyan-dark);
+}
+
+.cerakote-series-table tbody th strong,
+.cerakote-series-table tbody th span,
+.cerakote-series-table td b,
+.cerakote-series-table td small {
+  display: block;
+}
+
+.cerakote-series-table tbody th strong {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.cerakote-series-table tbody th span {
+  margin-top: 7px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.cerakote-series-table td {
+  color: #43565c;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.cerakote-series-table td b {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.cerakote-series-table td small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.cerakote-series-note {
+  margin: 17px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.cerakote-series-note a {
+  display: inline-block;
+  margin-left: 13px;
+  color: var(--cyan-dark);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .catalog-support {
   color: var(--white);
   background: var(--navy-2);
@@ -2930,6 +3055,15 @@ section[id] {
 
   .training-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cerakote-series-guide {
+    padding: 30px 24px;
+  }
+
+  .cerakote-series-heading {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .training-card-onsite {
