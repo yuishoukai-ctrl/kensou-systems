@@ -194,6 +194,20 @@ export default function EquipmentCatalogPage() {
           </article>
         </section>
 
+        <section className="coating-business" aria-labelledby="coating-business-title">
+          <div className="coating-business-copy">
+            <p className="eyebrow">粉体塗装の内製化・新規開業</p>
+            <h2 id="coating-business-title">必要な仕上げを、<br />自社の仕事に。</h2>
+            <p className="coating-business-lead">レストアや自社製品の仕上げに必要な粉体塗装を内製化。粉体塗装サービスで開業したい方にもおすすめです。</p>
+            <ul className="coating-business-points"><li>外注待ちを減らし、納期を自社で管理</li><li>試作・小ロット・再塗装にも柔軟に対応</li><li>レストア事業の新しいサービスとして展開</li></ul>
+            <a className="button button-primary" href="/drying-oven">乾燥炉と施工例を見る</a>
+          </div>
+          <figure className="coating-examples-visual">
+            <img src="/assets/powder-coating-examples-transparent.webp" width="1535" height="1024" loading="lazy" alt="赤いバイクフレーム、黒いバイクホイール前後、オレンジのスプリングの粉体塗装例" />
+            <figcaption>実際の粉体塗装例をもとにAIで背景処理・構成したイメージ</figcaption>
+          </figure>
+        </section>
+
         <section className="catalog-section catalog-support" id="support">
           <div className="catalog-support-layout">
             <div className="catalog-support-copy">

@@ -226,6 +226,17 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.015em; line-height: 1.2; }
 .product-actions { display: flex; flex-wrap: wrap; gap: 11px; align-items: center; }
 .product-actions .button { margin-top: 3px; }
 
+.coating-business { display: grid; grid-template-columns: minmax(360px, 5fr) minmax(520px, 7fr); gap: 54px; align-items: center; padding: 104px max(24px, calc((100vw - var(--max-width)) / 2)); color: var(--white); background: #0c2532; overflow: hidden; }
+.coating-business-copy { position: relative; z-index: 2; }
+.coating-business h2 { margin-bottom: 24px; font-size: clamp(38px, 4vw, 58px); }
+.coating-business-lead { margin: 0 0 24px; color: #c1d0d5; font-size: 16px; line-height: 2; }
+.coating-business-points { margin: 0 0 30px; padding: 0; list-style: none; }
+.coating-business-points li { position: relative; padding: 10px 0 10px 22px; color: #aebfc5; border-bottom: 1px solid var(--line-dark); font-size: 13px; }
+.coating-business-points li::before { position: absolute; top: 1.25em; left: 2px; width: 7px; height: 7px; content: ""; background: var(--orange); }
+.coating-examples-visual { position: relative; min-height: 520px; margin: 0; background: radial-gradient(circle at 48% 50%, rgba(84,216,229,.12), transparent 62%); }
+.coating-examples-visual img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 30px rgba(0,0,0,.24)); }
+.coating-examples-visual figcaption { position: absolute; right: 0; bottom: 0; color: #8099a4; font-size: 9px; }
+
 /* Powder curing oven detail */
 .oven-detail-page { color: var(--white); background: var(--ink); }
 .oven-detail-page .site-header { position: relative; }
@@ -368,6 +379,8 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.015em; line-height: 1.2; }
   .footer-notes, .copyright { grid-column: 1; }
   .mobile-cta { position: fixed; right: 0; bottom: 0; left: 0; z-index: 60; display: grid; place-items: center; min-height: 68px; color: var(--ink); background: var(--cyan); font-size: 14px; font-weight: 850; box-shadow: 0 -5px 24px rgba(0,0,0,.2); }
   .oven-detail-hero, .oven-detail-heading, .oven-consult { grid-template-columns: 1fr; }
+  .coating-business { grid-template-columns: 1fr; padding: 80px 24px; }
+  .coating-examples-visual { min-height: 420px; }
   .oven-detail-copy { padding: 70px 24px; }
   .oven-detail-visual { min-height: 520px; }
   .oven-detail-section, .oven-consult { padding: 76px 24px; }
@@ -384,6 +397,8 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.015em; line-height: 1.2; }
   .spec-list div { grid-template-columns: 120px 1fr; }
   .planning-block ul, .choice-grid, .form-grid { grid-template-columns: 1fr; }
   .oven-size-grid, .oven-models, .oven-checklist { grid-template-columns: 1fr; }
+  .coating-business { gap: 34px; }
+  .coating-examples-visual { min-height: 290px; }
   .oven-detail-copy h1 { font-size: 44px; }
   .choice-grid label:last-child { grid-column: auto; }
   .price { grid-template-columns: 1fr; }

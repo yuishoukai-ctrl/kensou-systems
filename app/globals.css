@@ -44,6 +44,16 @@
 .oven-use-cases { margin: 0 0 20px; padding: 20px; background: #eef3f3; border-left: 4px solid var(--cyan-dark); }
 .oven-use-cases > strong { display: block; margin-bottom: 10px; color: var(--ink); font-size: 13px; }
 .oven-use-cases ul { margin: 0; padding-left: 1.25em; color: #44565d; font-size: 13px; line-height: 1.8; }
+.coating-business { display: grid; grid-template-columns: minmax(360px, 5fr) minmax(520px, 7fr); gap: 54px; align-items: center; padding: 104px max(24px, calc((100vw - 1240px) / 2)); color: var(--white); background: #0c2532; overflow: hidden; }
+.coating-business-copy { position: relative; z-index: 2; }
+.coating-business h2 { margin: 0 0 24px; font-size: clamp(38px, 4vw, 58px); letter-spacing: -0.015em; line-height: 1.2; }
+.coating-business-lead { margin: 0 0 24px; color: #c1d0d5; font-size: 16px; line-height: 2; }
+.coating-business-points { margin: 0 0 30px; padding: 0; list-style: none; }
+.coating-business-points li { position: relative; padding: 10px 0 10px 22px; color: #aebfc5; border-bottom: 1px solid var(--line-dark); font-size: 13px; }
+.coating-business-points li::before { position: absolute; top: 1.25em; left: 2px; width: 7px; height: 7px; content: ""; background: var(--orange); }
+.coating-examples-visual { position: relative; min-height: 520px; margin: 0; background: radial-gradient(circle at 48% 50%, rgba(84,216,229,.12), transparent 62%); }
+.coating-examples-visual img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 30px rgba(0,0,0,.24)); }
+.coating-examples-visual figcaption { position: absolute; right: 0; bottom: 0; color: #8099a4; font-size: 9px; }
 .oven-model h3 { margin: 0 0 14px; font-size: clamp(25px, 2.5vw, 38px); letter-spacing: -0.015em; line-height: 1.25; }
 .oven-model p { margin: 0; color: #596a70; line-height: 1.8; }
 .oven-spec-note { margin: 26px 0 0; padding: 19px 22px; color: #596a70; background: #e9eeee; font-size: 12px; line-height: 1.8; }
@@ -56,6 +66,8 @@
 
 @media (max-width: 900px) {
   .oven-detail-hero, .oven-detail-heading, .oven-consult { grid-template-columns: 1fr; }
+  .coating-business { grid-template-columns: 1fr; padding: 80px 24px; }
+  .coating-examples-visual { min-height: 420px; }
   .oven-detail-copy { padding: 70px 24px; }
   .oven-detail-visual { min-height: 520px; }
   .oven-detail-section, .oven-consult { padding: 76px 24px; }
@@ -63,6 +75,8 @@
 
 @media (max-width: 540px) {
   .oven-size-grid, .oven-models, .oven-checklist { grid-template-columns: 1fr; }
+  .coating-business { gap: 34px; }
+  .coating-examples-visual { min-height: 290px; }
   .oven-detail-copy h1 { font-size: 44px; }
 }
 

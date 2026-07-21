@@ -46,6 +46,9 @@ test("server-renders the equipment catalog", async () => {
   assert.match(html, /高さ 約2000mm/);
   assert.match(html, /4ミニショップ/);
   assert.match(html, /自動車ホイール4本/);
+  assert.match(html, /粉体塗装を内製化/);
+  assert.match(html, /開業したい方にもおすすめ/);
+  assert.match(html, /powder-coating-examples-transparent\.webp/);
   assert.match(html, /サンドブラスト/);
   assert.match(html, /AI生成コンセプト画像/);
   assert.match(html, /推奨コンプレッサー/);
@@ -109,6 +112,7 @@ test("ships optimized product assets without starter preview code", async () => 
     [
       "logo-kensou-systems-dark.png",
       "logo-kensou-systems.png",
+      "powder-coating-examples-transparent.webp",
       "powder-curing-oven-generated.webp",
       "sandblast-concept.webp",
       "wetblast-hero.webp",
