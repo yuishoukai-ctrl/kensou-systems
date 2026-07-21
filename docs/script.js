@@ -15,7 +15,7 @@
       .map((input) => input.value);
     return [
       '【研装システムズ 設備相談メモ】',
-      `相談設備：${equipment.length ? equipment.join('、') : '未選択'}`,
+      `相談設備・サポート：${equipment.length ? equipment.join('、') : '未選択'}`,
       `会社・屋号：${valueOf('company') || '未記入'}`,
       `お名前：${valueOf('name') || '未記入'}`,
       `対象ワーク：${valueOf('work') || '未記入'}`,
@@ -71,6 +71,9 @@
     sandblast: 'サンドブラストマシン',
     powder: '粉体塗装機',
     oven: '粉体塗装用乾燥炉',
+    internalization: '内製化スタートパック',
+    opening: '開業サポートパック',
+    onsite: '出張実地講座',
   };
   const equipmentName = equipmentMap[equipmentKey];
   if (equipmentName) {

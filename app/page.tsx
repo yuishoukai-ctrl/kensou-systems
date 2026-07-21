@@ -42,7 +42,7 @@ export default function EquipmentCatalogPage() {
         <nav className="catalog-nav" aria-label="機材販売ページ ナビゲーション">
           <a href="#lineup">製品一覧</a>
           <a href="#process">工程提案</a>
-          <a href="#support">導入の流れ</a>
+          <a href="#training">内製化・開業支援</a>
           <a href="#divisions">事業部案内</a>
           <a href="#equipment-faq">よくある質問</a>
         </nav>
@@ -206,6 +206,71 @@ export default function EquipmentCatalogPage() {
             <img src="/assets/powder-coating-examples-transparent.webp" width="1535" height="1024" loading="lazy" alt="赤いバイクフレーム、黒いバイクホイール前後、オレンジのスプリングの粉体塗装例" />
             <figcaption>実際の粉体塗装例をもとにAIで背景処理・構成したイメージ</figcaption>
           </figure>
+        </section>
+
+        <section className="catalog-section catalog-training" id="training" aria-labelledby="training-title">
+          <div className="catalog-heading catalog-heading-split">
+            <div><p className="eyebrow eyebrow-dark">POWDER COATING SUPPORT</p><h2 id="training-title">設備を入れて終わりではなく、<br />仕上げを仕事にできるまで。</h2></div>
+            <p>自社施工を始めたい方と、粉体塗装サービスを開業したい方へ。実際のワークを使い、施工の判断とお客様への説明まで身につける実地講座です。</p>
+          </div>
+
+          <div className="training-grid">
+            <article className="training-card">
+              <div className="training-card-head"><span>01 / IN-HOUSE</span><strong>1日・1社2名まで</strong></div>
+              <h3>内製化スタートパック</h3>
+              <p className="training-audience">レストアや自社製品の粉体塗装を、外注から自社施工へ切り替えたいショップ向け。</p>
+              <ul className="training-topics">
+                <li><strong>機械操作</strong><span>始動、条件設定、停止、清掃、日常点検</span></li>
+                <li><strong>粉体塗装</strong><span>下地確認、アース、吹付、膜厚、焼付、仕上がり確認</span></li>
+                <li><strong>塗装トラブル</strong><span>ピンホール、ブツ、ゆず肌、膜厚ムラ、密着不良の原因整理</span></li>
+                <li><strong>マスキング</strong><span>ネジ穴、合わせ面、アース位置を守る材料選びと処理のコツ</span></li>
+                <li><strong>お客様の視点</strong><span>色・艶・塗装範囲・納期・再施工条件など、受付時に確認すべき点</span></li>
+              </ul>
+              <div className="training-card-foot">
+                <div className="training-price"><span>受講料</span><strong>198,000<small>円（税別）</small></strong></div>
+                <p>持込ワーク1種類／手順書／受講後30日・オンライン相談2回</p>
+                <a className="button button-primary" href="/?equipment=internalization#consult">内製化について相談する</a>
+              </div>
+            </article>
+
+            <article className="training-card training-card-featured">
+              <div className="training-card-head"><span>02 / BUSINESS START</span><strong>2日・1社2名まで</strong></div>
+              <h3>開業サポートパック</h3>
+              <p className="training-audience">施工技術だけでなく、受注の準備から顧客獲得まで整えて粉体塗装サービスを始めたい方向け。</p>
+              <ul className="training-topics">
+                <li><strong>施工技術</strong><span>機械操作、粉体塗装、焼付、検品を実際のワークで実習</span></li>
+                <li><strong>トラブル対応</strong><span>不具合の原因切り分けと、再施工・補修の判断</span></li>
+                <li><strong>マスキング</strong><span>形状別の処理、見切り、外してはいけない範囲の確認</span></li>
+                <li><strong>顧客対応</strong><span>仕上がり、塗装範囲、納期、施工限界を事前に共有する方法</span></li>
+                <li><strong>営業</strong><span>サービスメニュー、原価計算、価格設定、受付・見積の作り方</span></li>
+                <li><strong>顧客の集め方</strong><span>施工見本と事例写真、既存客への提案、ショップ連携、Web・SNSでの発信</span></li>
+              </ul>
+              <div className="training-card-foot">
+                <div className="training-price"><span>受講料</span><strong>330,000<small>円（税別）</small></strong></div>
+                <p>持込ワーク2種類／営業・原価資料／受講後60日・オンライン相談4回</p>
+                <a className="button button-primary" href="/?equipment=opening#consult">開業について相談する</a>
+              </div>
+            </article>
+
+            <article className="training-card training-card-onsite">
+              <div>
+                <div className="training-card-head"><span>03 / ON-SITE</span><strong>導入先で実施</strong></div>
+                <h3>出張実地講座</h3>
+                <p className="training-audience">導入した設備、作業導線、普段扱うワークに合わせて、自社の現場で確認したい事業者向け。</p>
+              </div>
+              <ul className="training-topics">
+                <li><strong>現場確認</strong><span>設備配置、安全条件、作業の流れ、清掃・保管方法を確認</span></li>
+                <li><strong>実地施工</strong><span>実際のワークで条件設定、マスキング、塗装、焼付、検品</span></li>
+                <li><strong>作業標準化</strong><span>担当者間で仕上がりを揃えるための手順と確認項目を整理</span></li>
+              </ul>
+              <div className="training-card-foot">
+                <div className="training-price"><span>講座料</span><strong>132,000<small>円／日（税別）</small></strong></div>
+                <p>交通費・宿泊費は別途実費。内容と必要日数は事前打ち合わせで決定します。</p>
+                <a className="button button-primary" href="/?equipment=onsite#consult">出張講座を相談する</a>
+              </div>
+            </article>
+          </div>
+          <p className="training-note">※設備、粉体、持込ワーク、追加消耗品等は別途です。材質・状態や安全条件により実習内容を変更する場合があります。技能資格の付与、売上・集客・開業成功を保証する講座ではありません。</p>
         </section>
 
         <section className="catalog-section catalog-support" id="support">
