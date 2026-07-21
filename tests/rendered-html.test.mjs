@@ -37,11 +37,13 @@ test("server-renders the equipment catalog", async () => {
   assert.match(html, /粉体塗装用乾燥炉/);
   assert.match(html, /href="\/drying-oven"/);
   assert.match(html, /炉内内寸 約1200 × 1200 × 1200mm/);
-  assert.match(html, /横幅 約1700mm × 奥行 約700mm/);
+  assert.match(html, /横幅 約1700 × 奥行 約700 × 高さ 約2000mm/);
   assert.match(html, /1,200,000円/);
   assert.match(html, /1,800,000円/);
   assert.match(html, /最高温度 220℃／三相200V・6kW/);
   assert.match(html, /最高温度 220℃／三相200V・10～15kW/);
+  assert.match(html, /1,200,000円（税別）/);
+  assert.match(html, /高さ 約2000mm/);
   assert.match(html, /サンドブラスト/);
   assert.match(html, /AI生成コンセプト画像/);
   assert.match(html, /推奨コンプレッサー/);
@@ -67,8 +69,10 @@ test("server-renders the drying oven detail page", async () => {
   assert.match(html, /三相200V/);
   assert.match(html, /6kW/);
   assert.match(html, /10～15kW/);
+  assert.match(html, /1,800,000円（税別）/);
+  assert.match(html, /高さ 約2000mm/);
   assert.match(html, /powder-curing-oven-generated\.webp/);
-  assert.match(html, /高さと炉内有効寸法は確認中/);
+  assert.match(html, /炉内有効寸法は確認中/);
 });
 
 test("keeps the wet-blast product detail page", async () => {

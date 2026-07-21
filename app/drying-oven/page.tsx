@@ -37,10 +37,10 @@ export default function DryingOvenPage() {
         <section className="oven-detail-section" id="models" aria-labelledby="models-title">
           <div className="oven-detail-heading"><div><p className="eyebrow">予定サイズ</p><h2 id="models-title">選べる<br />2サイズ。</h2></div><p>現時点で予定している寸法です。実際に炉内へ入れるワークの外形・重量・数量を確認し、扉開口や炉内有効寸法を含めて正式仕様をご案内します。</p></div>
           <div className="oven-models">
-            <article className="oven-model"><span className="oven-model-label">120サイズ</span><h3>炉内内寸<br />約1200 × 1200 × 1200mm</h3><strong className="oven-model-price">販売価格 1,200,000円</strong><dl className="oven-model-spec"><div><dt>最高温度</dt><dd>220℃</dd></div><div><dt>電源</dt><dd>三相200V</dd></div><div><dt>消費電力</dt><dd>6kW</dd></div></dl><p>120cm四方の炉内を予定しています。ワーク寸法と治具を含め、必要な余裕を確認します。</p></article>
-            <article className="oven-model"><span className="oven-model-label">180サイズ</span><h3>横幅 約1700mm<br />奥行 約700mm</h3><strong className="oven-model-price">販売価格 1,800,000円</strong><dl className="oven-model-spec"><div><dt>最高温度</dt><dd>220℃</dd></div><div><dt>電源</dt><dd>三相200V</dd></div><div><dt>消費電力</dt><dd>10～15kW</dd></div></dl><p>高さと炉内有効寸法は確認中です。対象ワークと設置場所を伺い、確定仕様をご案内します。</p></article>
+            <article className="oven-model"><span className="oven-model-label">120サイズ</span><h3>炉内内寸<br />約1200 × 1200 × 1200mm</h3><strong className="oven-model-price">販売価格 1,200,000円（税別）</strong><dl className="oven-model-spec"><div><dt>最高温度</dt><dd>220℃</dd></div><div><dt>電源</dt><dd>三相200V</dd></div><div><dt>消費電力</dt><dd>6kW</dd></div></dl><p>120cm四方の炉内を予定しています。ワーク寸法と治具を含め、必要な余裕を確認します。</p></article>
+            <article className="oven-model"><span className="oven-model-label">180サイズ</span><h3>横幅 約1700mm<br />奥行 約700mm<br />高さ 約2000mm</h3><strong className="oven-model-price">販売価格 1,800,000円（税別）</strong><dl className="oven-model-spec"><div><dt>最高温度</dt><dd>220℃</dd></div><div><dt>電源</dt><dd>三相200V</dd></div><div><dt>消費電力</dt><dd>10～15kW</dd></div></dl><p>炉内有効寸法は確認中です。対象ワークと設置場所を伺い、確定仕様をご案内します。</p></article>
           </div>
-          <p className="oven-spec-note">掲載寸法は現時点の予定仕様です。扉開口、電源・熱源、最高温度、保持時間、設置・排気条件を確認します。税区分・送料・搬入設置費等は正式見積に明記します。</p>
+          <p className="oven-spec-note">掲載寸法は現時点の予定仕様です。扉開口、電源・熱源、最高温度、保持時間、設置・排気条件を確認します。掲載価格は税別です。送料・搬入設置費等は正式見積に明記します。</p>
         </section>
 
         <section className="oven-consult" id="consult-points" aria-labelledby="consult-points-title">
