@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
-type EquipmentKey = "大型ウェットブラスト" | "粉体塗装機" | "粉体塗装用乾燥炉" | "一連設備" | "未定・相談したい";
+type EquipmentKey = "大型ウェットブラスト" | "サンドブラスト（開発予定）" | "粉体塗装機" | "粉体塗装用乾燥炉" | "一連設備" | "未定・相談したい";
 
 type EquipmentLead = {
   equipments: EquipmentKey[];
@@ -24,6 +24,7 @@ type EquipmentLead = {
 
 const equipmentOptions: EquipmentKey[] = [
   "大型ウェットブラスト",
+  "サンドブラスト（開発予定）",
   "粉体塗装機",
   "粉体塗装用乾燥炉",
   "一連設備",
@@ -50,6 +51,7 @@ const initialData: EquipmentLead = {
 
 const queryEquipment: Record<string, EquipmentKey> = {
   wetblast: "大型ウェットブラスト",
+  sandblast: "サンドブラスト（開発予定）",
   powder: "粉体塗装機",
   oven: "粉体塗装用乾燥炉",
   line: "一連設備",
@@ -74,7 +76,7 @@ const summaryLabels: Array<[keyof Omit<EquipmentLead, "equipments">, string]> = 
 
 function makeSummary(data: EquipmentLead) {
   return [
-    "表面処理・粉体塗装設備 導入相談",
+    "研装システムズ 設備導入相談",
     "",
     `【相談したい設備】\n${data.equipments.join("、") || "未選択"}`,
     ...summaryLabels.map(([key, label]) => `【${label}】\n${data[key] || "未入力・不明"}`),
@@ -101,7 +103,7 @@ export default function EquipmentLeadForm() {
   }, []);
 
   const summary = useMemo(() => makeSummary(data), [data]);
-  const mailto = `mailto:?subject=${encodeURIComponent("表面処理・粉体塗装設備 導入相談")}&body=${encodeURIComponent(summary)}`;
+  const mailto = `mailto:?subject=${encodeURIComponent("研装システムズ 設備導入相談")}&body=${encodeURIComponent(summary)}`;
 
   function update<K extends keyof EquipmentLead>(key: K, value: EquipmentLead[K]) {
     setData((current) => ({ ...current, [key]: value }));

@@ -1899,7 +1899,7 @@ section[id] {
 
 .catalog-status-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   max-width: var(--max-width);
   margin: 0 auto;
   color: var(--white);
@@ -2112,6 +2112,10 @@ section[id] {
 
 .oven-crop img {
   object-position: 86% center;
+}
+
+.sandblast-crop img {
+  object-position: center;
 }
 
 .catalog-generated-image::after {
@@ -2398,10 +2402,6 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 9px;
-}
-
-.equipment-choice-grid .choice-card:last-child {
-  grid-column: 1 / -1;
 }
 
 .equipment-form .choice-card span {

@@ -3,8 +3,8 @@ import EquipmentLeadForm from "./EquipmentLeadForm";
 
 const equipmentFaqs = [
   {
-    q: "3種類すべて導入する必要がありますか？",
-    a: "いいえ。大型ウェットブラスト、粉体塗装機、粉体塗装用乾燥炉は単体でもご相談いただけます。現在の設備を確認し、必要な部分だけ整理します。",
+    q: "4種類すべて導入する必要がありますか？",
+    a: "いいえ。大型ウェットブラスト、サンドブラスト、粉体塗装機、粉体塗装用乾燥炉は単体でもご相談いただけます。現在の設備を確認し、必要な部分だけ整理します。",
   },
   {
     q: "工程全体の相談もできますか？",
@@ -13,6 +13,10 @@ const equipmentFaqs = [
   {
     q: "粉体塗装機と乾燥炉の価格はいくらですか？",
     a: "現在、仕様と販売条件を策定中です。ワーク、処理量、必要仕様、設置条件を確認し、確定後に正式見積をご案内します。",
+  },
+  {
+    q: "サンドブラストマシンはいつから販売しますか？",
+    a: "現在は開発予定・仕様策定中です。ワーク寸法、用途、使用する研削材、必要な処理力、集塵条件などを伺い、製品仕様の検討に反映します。価格と販売時期は確定後にご案内します。",
   },
   {
     q: "ウェットブラストは100Vだけで使えますか？",
@@ -32,9 +36,9 @@ export default function EquipmentCatalogPage() {
   return (
     <>
       <header className="catalog-header">
-        <a className="catalog-brand" href="#top" aria-label="表面処理・粉体塗装設備 トップへ">
-          <span className="brand-mark">SF</span>
-          <span><strong>SURFACE FINISH SYSTEMS</strong><small>表面処理・粉体塗装設備</small></span>
+        <a className="catalog-brand" href="#top" aria-label="研装システムズ トップへ">
+          <span className="brand-mark">KS</span>
+          <span><strong>KENSO SYSTEMS</strong><small>研装システムズ</small></span>
         </a>
         <nav className="catalog-nav" aria-label="機材販売ページ ナビゲーション">
           <a href="#lineup">製品一覧</a>
@@ -49,10 +53,10 @@ export default function EquipmentCatalogPage() {
         <section className="catalog-hero" aria-labelledby="catalog-title">
           <div className="catalog-hero-copy">
             <p className="eyebrow">METAL FINISHING EQUIPMENT</p>
-            <h1 id="catalog-title">下地処理から<br />粉体塗装、焼付まで。</h1>
+            <h1 id="catalog-title">ブラスト処理から<br />粉体塗装、焼付まで。</h1>
             <p className="catalog-hero-tagline">現場に合う一連の設備を、ひとつの窓口で。</p>
             <p className="catalog-hero-lead">
-              大型ウェットブラストマシン、粉体塗装機、粉体塗装用乾燥炉。
+              大型ウェットブラストマシン、サンドブラストマシン、粉体塗装機、粉体塗装用乾燥炉。
               ワークの大きさ、仕上がり、処理量、設置環境を確認し、単体導入から工程づくりまでご相談いただけます。
             </p>
             <div className="hero-actions">
@@ -63,18 +67,19 @@ export default function EquipmentCatalogPage() {
           </div>
 
           <figure className="catalog-hero-visual">
-            <img src="/equipment-lineup.png" alt="大型ウェットブラスト、粉体塗装機、粉体塗装用乾燥炉の設備構成イメージ" width="1720" height="909" fetchPriority="high" />
+            <img src="/equipment-lineup.png" alt="研装システムズが提案する表面処理・粉体塗装設備の構成イメージ" width="1720" height="909" fetchPriority="high" />
             <figcaption>製品構成イメージ / 実際の仕様・外観とは異なります</figcaption>
             <div className="catalog-hero-index" aria-hidden="true">
-              <span>01 WET BLAST</span><span>02 POWDER COATING</span><span>03 CURING OVEN</span>
+              <span>01 WET BLAST</span><span>02 POWDER COATING</span><span>03 CURING OVEN</span><span>04 SAND BLAST</span>
             </div>
           </figure>
         </section>
 
         <section className="catalog-status-strip" aria-label="取扱状況">
           <div><span>01 / 販売中</span><strong>大型ウェットブラスト</strong></div>
-          <div><span>02 / 取扱準備中</span><strong>粉体塗装機</strong></div>
-          <div><span>03 / 取扱準備中</span><strong>粉体塗装用乾燥炉</strong></div>
+          <div><span>02 / 開発予定</span><strong>サンドブラスト</strong></div>
+          <div><span>03 / 取扱準備中</span><strong>粉体塗装機</strong></div>
+          <div><span>04 / 取扱準備中</span><strong>粉体塗装用乾燥炉</strong></div>
         </section>
 
         <section className="catalog-section catalog-process" id="process">
@@ -84,7 +89,7 @@ export default function EquipmentCatalogPage() {
           </div>
 
           <ol className="process-map">
-            <li><span className="process-no">01</span><small>SURFACE PREP</small><h3>下地処理</h3><p>ウェットブラストで、塗装前の洗浄・表面処理を行います。</p></li>
+            <li><span className="process-no">01</span><small>SURFACE PREP</small><h3>下地処理</h3><p>用途に合わせてウェットブラストまたはサンドブラストを検討します。</p></li>
             <li><span className="process-no">02</span><small>POWDER COATING</small><h3>粉体塗装</h3><p>ワーク、粉体、色替え、処理量に合わせて塗装設備を検討します。</p></li>
             <li><span className="process-no">03</span><small>CURING</small><h3>焼付</h3><p>ワーク寸法と粉体メーカー指定条件に合わせて、乾燥炉を検討します。</p></li>
           </ol>
@@ -124,13 +129,32 @@ export default function EquipmentCatalogPage() {
             </div>
           </article>
 
+          <article className="catalog-product product-sandblast">
+            <figure className="catalog-product-image catalog-generated-image sandblast-crop">
+              <img src="/assets/sandblast-concept.webp" alt="開発予定のサンドブラストマシンのAI生成コンセプト画像" width="1536" height="1024" loading="lazy" />
+              <figcaption>AI生成コンセプト画像 / 実際の仕様・外観とは異なります</figcaption>
+            </figure>
+            <div className="catalog-product-copy">
+              <div className="product-status is-planning"><span>02</span> 開発予定・仕様策定中</div>
+              <p className="product-type">SAND BLAST MACHINE</p>
+              <h3>乾式ブラストの用途に合わせて考える、<br />サンドブラストマシン。</h3>
+              <p>錆・塗膜の除去、素地調整などの用途を想定し、対象ワーク、使用する研削材、必要な処理力、作業環境に合わせた仕様を検討しています。</p>
+              <div className="planning-block">
+                <span>仕様策定で確認</span>
+                <ul><li>ワークの材質・寸法・重量</li><li>錆取り・塗膜剥離などの用途</li><li>使用する研削材と希望する仕上がり</li><li>コンプレッサー容量・使用圧力</li><li>集塵・換気・設置スペース</li></ul>
+              </div>
+              <p className="planning-note">現在は開発予定の参考掲載です。仕様・価格・販売時期は未定で、掲載画像は完成品を示すものではありません。</p>
+              <a className="button button-primary" href="/?equipment=sandblast#consult">開発予定機について相談する</a>
+            </div>
+          </article>
+
           <article className="catalog-product product-powder">
             <figure className="catalog-product-image catalog-generated-image powder-crop">
               <img src="/equipment-lineup.png" alt="粉体塗装機を含む設備構成イメージ" width="1720" height="909" loading="lazy" />
               <figcaption>製品構成イメージ / 実機写真ではありません</figcaption>
             </figure>
             <div className="catalog-product-copy">
-              <div className="product-status is-planning"><span>02</span> 取扱準備中・導入相談受付</div>
+              <div className="product-status is-planning"><span>03</span> 取扱準備中・導入相談受付</div>
               <p className="product-type">POWDER COATING SYSTEM</p>
               <h3>塗るものと仕上がりから考える、<br />粉体塗装機。</h3>
               <p>対象ワークの材質・寸法、使用する粉体、色替え頻度、処理量、作業スペースを伺い、必要な設備構成を整理します。</p>
@@ -149,7 +173,7 @@ export default function EquipmentCatalogPage() {
               <figcaption>製品構成イメージ / 実機写真ではありません</figcaption>
             </figure>
             <div className="catalog-product-copy">
-              <div className="product-status is-planning"><span>03</span> 取扱準備中・導入相談受付</div>
+              <div className="product-status is-planning"><span>04</span> 取扱準備中・導入相談受付</div>
               <p className="product-type">POWDER CURING OVEN</p>
               <h3>ワーク寸法と焼付条件から考える、<br />粉体塗装用乾燥炉。</h3>
               <p>炉内に入れる最大ワーク、必要温度・保持時間、一回の処理量、設置スペース、搬入経路、利用可能な熱源を確認し、受注仕様を検討します。</p>
@@ -197,7 +221,7 @@ export default function EquipmentCatalogPage() {
             <p>分からない項目は「不明」で構いません。対象ワークと現在の困りごとから確認を始めます。</p>
             <div className="consult-safety">
               <strong>ご相談前に</strong>
-              <p>粉体塗装設備と乾燥炉は、電源・圧縮空気・接地・換気・集塵・排気・防火等の条件確認が必要です。</p>
+              <p>ブラスト・粉体塗装設備・乾燥炉は、電源・圧縮空気・接地・換気・集塵・排気・防火等の条件確認が必要です。</p>
             </div>
           </div>
           <EquipmentLeadForm />
@@ -205,15 +229,16 @@ export default function EquipmentCatalogPage() {
       </main>
 
       <footer className="catalog-footer">
-        <div className="footer-brand"><span className="brand-mark">SF</span><div><strong>SURFACE FINISH SYSTEMS</strong><small>表面処理・粉体塗装設備</small></div></div>
-        <div className="footer-status"><span>SALES CONTACT</span><strong>販売元情報は正式公開前に設定</strong></div>
+        <div className="footer-brand"><span className="brand-mark">KS</span><div><strong>KENSO SYSTEMS</strong><small>研装システムズ</small></div></div>
+        <div className="footer-status"><span>SALES CONTACT</span><strong>研装システムズ</strong></div>
         <div className="catalog-footer-notes">
           <p>※大型ウェットブラストの販売価格898,000円は、税区分・送料・搬入設置等を正式見積に明記します。</p>
-          <p>※粉体塗装機・乾燥炉は仕様および販売条件を策定中です。掲載画像は製品構成イメージであり、実際の製品とは異なります。</p>
+          <p>※粉体塗装機・乾燥炉は仕様および販売条件を策定中です。サンドブラストは開発予定・仕様策定中です。</p>
+          <p>※AI生成画像および製品構成画像は参考イメージであり、実際の製品仕様・外観とは異なります。</p>
           <p>※必要な電源、圧縮空気、換気・集塵、排気、接地、消防・労働安全上の条件は設置先ごとに確認します。</p>
           <p>※保証、支払、予約金、納期、変更・キャンセル条件は、入金前に書面で提示します。</p>
         </div>
-        <p className="copyright">© SURFACE FINISH SYSTEMS</p>
+        <p className="copyright">© KENSO SYSTEMS</p>
       </footer>
 
       <a className="mobile-sticky-cta" href="#consult">設備導入を相談する</a>

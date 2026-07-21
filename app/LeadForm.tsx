@@ -49,7 +49,7 @@ function makeSummary(data: LeadData) {
     (key) => `【${fieldLabels[key]}】\n${data[key] || "未入力"}`,
   );
   return [
-    "大型ウェットブラストマシン デモ・導入相談",
+    "研装システムズ｜大型ウェットブラスト デモ・導入相談",
     "",
     ...lines,
     "",
@@ -66,7 +66,7 @@ export default function LeadForm() {
   const [completed, setCompleted] = useState(false);
 
   const summary = useMemo(() => makeSummary(data), [data]);
-  const mailto = `mailto:?subject=${encodeURIComponent("大型ウェットブラストマシン デモ・導入相談")}&body=${encodeURIComponent(summary)}`;
+  const mailto = `mailto:?subject=${encodeURIComponent("研装システムズ｜大型ウェットブラスト デモ・導入相談")}&body=${encodeURIComponent(summary)}`;
 
   function updateField(key: keyof LeadData, value: string) {
     setData((current) => ({ ...current, [key]: value }));

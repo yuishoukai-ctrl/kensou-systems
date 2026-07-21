@@ -30,17 +30,19 @@ test("server-renders the equipment catalog", async () => {
 
   const html = await response.text();
   assert.match(html, /<html lang="ja">/i);
-  assert.match(html, /<title>表面処理・粉体塗装設備/);
+  assert.match(html, /<title>研装システムズ｜ウェットブラスト/);
   assert.match(html, /下地処理から/);
   assert.match(html, /898,000/);
   assert.match(html, /粉体塗装機/);
   assert.match(html, /粉体塗装用乾燥炉/);
+  assert.match(html, /サンドブラスト/);
+  assert.match(html, /AI生成コンセプト画像/);
   assert.match(html, /推奨コンプレッサー/);
   assert.match(html, /5\.5kW/);
   assert.match(html, /電動ワイパー/);
   assert.match(html, /設備一式を相談する/);
   assert.match(html, /連絡先の入力へ/);
-  assert.match(html, /property="og:image" content="https:\/\/preview\.example\/og\.png"/);
+  assert.match(html, /property="og:image" content="https:\/\/preview\.example\/og-kensou-systems\.png"/);
   assert.doesNotMatch(html, /Your site is taking shape|react-loading-skeleton|codex-preview/i);
 });
 
@@ -62,7 +64,8 @@ test("ships optimized product assets without starter preview code", async () => 
     readdir(new URL("../public/assets/", import.meta.url)),
   ]);
 
-  assert.match(page, /SURFACE FINISH SYSTEMS/);
+  assert.match(page, /KENSO SYSTEMS/);
+  assert.match(page, /sandblast-concept\.webp/);
   assert.match(page, /<EquipmentLeadForm \/>/);
   assert.match(layout, /generateMetadata/);
   assert.match(layout, /robots:\s*\{ index: false, follow: false \}/);
@@ -70,6 +73,7 @@ test("ships optimized product assets without starter preview code", async () => 
   assert.deepEqual(
     assets.sort(),
     [
+      "sandblast-concept.webp",
       "wetblast-hero.webp",
       "wetblast-open.webp",
       "wetblast-side.webp",
@@ -78,7 +82,7 @@ test("ships optimized product assets without starter preview code", async () => 
     ],
   );
   await Promise.all([
-    access(new URL("../public/og.png", import.meta.url)),
+    access(new URL("../public/og-kensou-systems.png", import.meta.url)),
     access(new URL("../public/favicon.png", import.meta.url)),
     access(new URL("../public/equipment-lineup.png", import.meta.url)),
   ]);

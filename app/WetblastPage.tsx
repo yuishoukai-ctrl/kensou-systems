@@ -75,9 +75,9 @@ export default function Home() {
   return (
     <>
       <header className="site-header">
-        <a className="brand" href="/" aria-label="機材販売ページへ戻る">
-          <span className="brand-mark">WB</span>
-          <span className="brand-name">LARGE WET BLAST</span>
+        <a className="brand" href="/" aria-label="研装システムズの機材販売ページへ戻る">
+          <span className="brand-mark">KS</span>
+          <span className="brand-name">KENSO SYSTEMS</span>
         </a>
         <nav className="desktop-nav" aria-label="メインナビゲーション">
           <a href="/">機材一覧</a>
@@ -312,19 +312,19 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="footer-brand">
-          <span className="brand-mark">WB</span>
-          <div><strong>LARGE WET BLAST</strong><small>大型ウェットブラストマシン</small></div>
+          <span className="brand-mark">KS</span>
+          <div><strong>KENSO SYSTEMS</strong><small>研装システムズ</small></div>
         </div>
         <div className="footer-status">
-          <span>販売元情報 / CONTACT</span>
-          <strong>正式公開前に設定</strong>
+          <span>PRODUCT / CONTACT</span>
+          <strong>大型ウェットブラストマシン</strong>
         </div>
         <div className="footer-notes">
           <p>※販売価格898,000円。税区分、送料、搬入・設置、研磨材、コンプレッサー、オプション等は正式見積に明記します。</p>
           <p>※噴射性能はコンプレッサー能力、ノズル、圧力、研磨材、対象物により異なります。</p>
           <p>※仕様・外観は改良のため変更する場合があります。正式な取引条件は見積書・注文条件を優先します。</p>
         </div>
-        <p className="copyright">© LARGE WET BLAST SYSTEM</p>
+        <p className="copyright">© KENSO SYSTEMS</p>
       </footer>
 
       <a className="mobile-sticky-cta" href="#inquiry">実機デモを予約する</a>
