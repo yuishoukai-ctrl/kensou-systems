@@ -222,6 +222,7 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.015em; line-height: 1.2; }
 .oven-size-grid strong { color: var(--white); font-size: 14px; line-height: 1.55; }
 .oven-size-grid b { color: #f0b07d; font-size: 15px; }
 .oven-size-grid small { color: #91a8b2; font-size: 11px; }
+.oven-size-grid .oven-power-spec { color: #d8e4e8; font-weight: 700; }
 .product-actions { display: flex; flex-wrap: wrap; gap: 11px; align-items: center; }
 .product-actions .button { margin-top: 3px; }
 
@@ -245,6 +246,10 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.015em; line-height: 1.2; }
 .oven-model-label { display: block; margin-bottom: 18px; color: var(--cyan-dark); font-size: 13px; font-weight: 700; }
 .oven-model h3 { margin-bottom: 14px; font-size: clamp(25px, 2.5vw, 38px); }
 .oven-model-price { display: block; margin: 0 0 18px; padding: 12px 14px; color: var(--ink); background: #f2b580; font-size: 18px; }
+.oven-model-spec { margin: 0 0 20px; border-top: 1px solid var(--line); }
+.oven-model-spec > div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.oven-model-spec dt { color: #68797f; font-size: 12px; }
+.oven-model-spec dd { margin: 0; color: var(--ink); font-size: 14px; font-weight: 700; }
 .oven-model p { margin: 0; color: #596a70; line-height: 1.8; }
 .oven-spec-note { margin: 26px 0 0; padding: 19px 22px; color: #596a70; background: #e9eeee; font-size: 12px; line-height: 1.8; }
 .oven-consult { display: grid; grid-template-columns: minmax(320px, 5fr) minmax(480px, 7fr); gap: 70px; padding: 96px max(24px, calc((100vw - var(--max-width)) / 2)); }

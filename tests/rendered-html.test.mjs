@@ -40,6 +40,8 @@ test("server-renders the equipment catalog", async () => {
   assert.match(html, /横幅 約1700mm × 奥行 約700mm/);
   assert.match(html, /1,200,000円/);
   assert.match(html, /1,800,000円/);
+  assert.match(html, /最高温度 220℃／三相200V・6kW/);
+  assert.match(html, /最高温度 220℃／三相200V・10～15kW/);
   assert.match(html, /サンドブラスト/);
   assert.match(html, /AI生成コンセプト画像/);
   assert.match(html, /推奨コンプレッサー/);
@@ -62,6 +64,9 @@ test("server-renders the drying oven detail page", async () => {
   assert.match(html, /180サイズ/);
   assert.match(html, /1,200,000円/);
   assert.match(html, /1,800,000円/);
+  assert.match(html, /三相200V/);
+  assert.match(html, /6kW/);
+  assert.match(html, /10～15kW/);
   assert.match(html, /powder-curing-oven-generated\.webp/);
   assert.match(html, /高さと炉内有効寸法は確認中/);
 });
