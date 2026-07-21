@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 
-type EquipmentKey = "大型ウェットブラスト" | "サンドブラスト（開発予定）" | "粉体塗装機" | "粉体塗装用乾燥炉" | "一連設備" | "未定・相談したい";
+type EquipmentKey = "大型ウェットブラスト" | "サンドブラスト（開発予定）" | "粉体塗装機" | "粉体塗装用乾燥炉" | "一連設備" | "内製化スタートパック" | "開業サポートパック" | "出張実地講座" | "未定・相談したい";
 
 type EquipmentLead = {
   equipments: EquipmentKey[];
@@ -28,6 +28,9 @@ const equipmentOptions: EquipmentKey[] = [
   "粉体塗装機",
   "粉体塗装用乾燥炉",
   "一連設備",
+  "内製化スタートパック",
+  "開業サポートパック",
+  "出張実地講座",
   "未定・相談したい",
 ];
 
@@ -55,6 +58,9 @@ const queryEquipment: Record<string, EquipmentKey> = {
   powder: "粉体塗装機",
   oven: "粉体塗装用乾燥炉",
   line: "一連設備",
+  internalization: "内製化スタートパック",
+  opening: "開業サポートパック",
+  onsite: "出張実地講座",
 };
 
 const summaryLabels: Array<[keyof Omit<EquipmentLead, "equipments">, string]> = [
@@ -78,7 +84,7 @@ function makeSummary(data: EquipmentLead) {
   return [
     "研装システムズ 設備導入相談",
     "",
-    `【相談したい設備】\n${data.equipments.join("、") || "未選択"}`,
+    `【相談したい設備・サポート】\n${data.equipments.join("、") || "未選択"}`,
     ...summaryLabels.map(([key, label]) => `【${label}】\n${data[key] || "未入力・不明"}`),
     "",
     "※この内容だけでは注文・予約金の支払いは確定しません。",
@@ -204,7 +210,7 @@ export default function EquipmentLeadForm() {
       {step === 1 ? (
         <div className="form-fields">
           <fieldset>
-            <legend>相談したい設備 <em>必須・複数選択可</em></legend>
+            <legend>相談したい設備・サポート <em>必須・複数選択可</em></legend>
             <div className="equipment-choice-grid">
               {equipmentOptions.map((equipment) => (
                 <label className="choice-card" key={equipment}>
