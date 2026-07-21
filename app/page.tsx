@@ -43,6 +43,7 @@ export default function EquipmentCatalogPage() {
           <a href="#lineup">製品一覧</a>
           <a href="#process">工程提案</a>
           <a href="#support">導入の流れ</a>
+          <a href="#divisions">事業部案内</a>
           <a href="#equipment-faq">よくある質問</a>
         </nav>
         <a className="catalog-header-cta" href="#consult">設備導入を相談</a>
@@ -202,6 +203,31 @@ export default function EquipmentCatalogPage() {
           </div>
         </section>
 
+        <section className="catalog-section catalog-divisions" id="divisions" aria-labelledby="divisions-title">
+          <div className="catalog-division-intro">
+            <p className="eyebrow eyebrow-dark">BUSINESS DIVISIONS</p>
+            <h2 id="divisions-title">ものづくりと発信を、<br />二つの事業で支える。</h2>
+            <p>研装システムズは、表面処理設備を扱う産業機械事業部と、地域の店舗・中小事業者を支援するWeb制作事業部を分けて運営しています。</p>
+          </div>
+          <div className="catalog-division-grid">
+            <article className="catalog-division-card is-current">
+              <span>INDUSTRIAL EQUIPMENT DIVISION</span>
+              <small>現在のサイト</small>
+              <h3>産業機械事業部</h3>
+              <strong>ブラスト・粉体塗装設備</strong>
+              <p>ウェットブラスト、サンドブラスト、粉体塗装機、粉体塗装用乾燥炉の企画・販売。</p>
+            </article>
+            <a className="catalog-division-card catalog-division-link" href="https://yasashii-web-studio-jp.yuishoukai.chatgpt.site" target="_blank" rel="noreferrer" aria-label="Web制作事業部・やさしいWeb制作を関係者向け限定サイトで見る">
+              <span>WEB CREATION DIVISION</span>
+              <small>関係者向け限定公開</small>
+              <h3>Web制作事業部</h3>
+              <strong>やさしいWeb制作</strong>
+              <p>静岡市清水区を中心に、初心者にも分かりやすいホームページ制作を提供します。</p>
+              <b>事業部サイトを見る <i aria-hidden="true">→</i></b>
+            </a>
+          </div>
+        </section>
+
         <section className="catalog-section catalog-faq" id="equipment-faq">
           <div className="faq-layout">
             <div className="faq-heading"><p className="eyebrow eyebrow-dark">FAQ</p><h2>機材導入の<br />よくある質問</h2><p>不明な点は総合相談で一緒に整理できます。</p></div>
@@ -229,7 +255,7 @@ export default function EquipmentCatalogPage() {
 
       <footer className="catalog-footer">
         <div className="footer-brand"><img className="brand-logo" src="/assets/logo-kensou-systems-dark.png" alt="研装システムズ｜KENSO SYSTEMS" width="1400" height="356" loading="lazy" /></div>
-        <div className="footer-status"><span>SALES CONTACT</span><strong>研装システムズ</strong></div>
+        <div className="footer-status"><span>INDUSTRIAL EQUIPMENT DIVISION</span><strong>産業機械事業部</strong></div>
         <div className="catalog-footer-notes">
           <p>※大型ウェットブラストの販売価格898,000円は、税区分・送料・搬入設置等を正式見積に明記します。</p>
           <p>※粉体塗装機・乾燥炉は仕様および販売条件を策定中です。サンドブラストは開発予定・仕様策定中です。</p>

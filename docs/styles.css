@@ -225,6 +225,25 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.05em; line-height: 1.13; }
 .support-list h3 { margin: 0 0 4px; font-size: 19px; }
 .support-list p { margin: 0; color: #9fb3bb; font-size: 13px; line-height: 1.7; }
 
+.divisions { display: grid; grid-template-columns: minmax(330px, 5fr) minmax(0, 7fr); gap: 90px; align-items: center; background: var(--paper); }
+.division-intro h2 { margin-bottom: 24px; font-size: clamp(39px, 5vw, 64px); }
+.division-intro > p:last-child { margin: 0; color: var(--muted); line-height: 2; }
+.division-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--line); }
+.division-card { position: relative; min-height: 360px; padding: 38px 34px; background: var(--white); }
+.division-card + .division-card { border-left: 1px solid var(--line); }
+.division-card > span { display: block; margin-bottom: 32px; color: var(--cyan-dark); font-size: 9px; font-weight: 900; letter-spacing: .13em; }
+.division-card > small { position: absolute; top: 34px; right: 30px; color: var(--orange); font-size: 9px; font-weight: 850; }
+.division-card h3 { margin-bottom: 7px; font-size: 28px; }
+.division-card > strong { display: block; margin-bottom: 22px; color: var(--cyan-dark); font-size: 14px; }
+.division-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.85; }
+.division-card b { position: absolute; right: 34px; bottom: 30px; left: 34px; display: flex; justify-content: space-between; color: var(--ink); font-size: 12px; }
+.division-card b i { color: var(--cyan-dark); font-size: 17px; font-style: normal; }
+.division-link { transition: color 180ms ease, background 180ms ease, transform 180ms ease; }
+.division-link:hover { color: var(--white); background: var(--navy-2); transform: translateY(-4px); }
+.division-link:hover p, .division-link:hover b { color: var(--white); }
+.division-link:hover > small { color: #f1b382; }
+.is-current { background: #e8eded; }
+
 .consultation { display: grid; grid-template-columns: minmax(330px, 4fr) minmax(0, 8fr); gap: 80px; align-items: start; color: var(--white); background: var(--navy); }
 .consult-intro { position: sticky; top: 108px; }
 .consult-intro > p { color: #afc1c8; line-height: 2; }
@@ -293,7 +312,9 @@ h1, h2, h3 { margin-top: 0; letter-spacing: -.05em; line-height: 1.13; }
   .product, .product-reverse { display: flex; gap: 38px; flex-direction: column; padding: 55px 0; }
   .product-image, .product-reverse .product-image { order: 1; min-height: 480px; }
   .product-copy, .product-reverse .product-copy { order: 2; }
-  .support, .consultation { grid-template-columns: 1fr; gap: 50px; }
+  .support, .divisions, .consultation { grid-template-columns: 1fr; gap: 50px; }
+  .division-grid { grid-template-columns: 1fr; }
+  .division-card + .division-card { border-top: 1px solid var(--line); border-left: 0; }
   .consult-intro { position: static; }
   .consult-form { padding: 28px 20px; }
   .site-footer { grid-template-columns: 1fr; gap: 30px; padding: 50px 20px 32px; }
