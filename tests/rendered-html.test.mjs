@@ -121,6 +121,8 @@ test("ships optimized product assets without starter preview code", async () => 
   assert.match(page, /<EquipmentLeadForm \/>/);
   assert.match(layout, /generateMetadata/);
   assert.match(layout, /robots:\s*\{ index: true, follow: true \}/);
+  assert.match(layout, /verification:\s*\{ google:/);
+  assert.match(docsIndex, /name="google-site-verification"/);
   assert.match(docsIndex, /220,000/);
   assert.match(docsIndex, /代表シリーズ選定表/);
   assert.match(docsIndex, /大型ウェットブラストマシン/);
