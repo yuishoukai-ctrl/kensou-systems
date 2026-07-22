@@ -30,7 +30,7 @@ test("server-renders the equipment catalog", async () => {
 
   const html = await response.text();
   assert.match(html, /<html lang="ja">/i);
-  assert.match(html, /<title>研装システムズ｜ウェットブラスト/);
+  assert.match(html, /<title>大型ウェットブラストマシン・粉体塗装設備｜研装システムズ/);
   assert.match(html, /下地処理から/);
   assert.match(html, /898,000/);
   assert.match(html, /粉体塗装機/);
@@ -55,6 +55,7 @@ test("server-renders the equipment catalog", async () => {
   assert.match(html, /5\.5kW/);
   assert.match(html, /電動ワイパー/);
   assert.match(html, /設備一式を相談する/);
+  assert.match(html, /大型ウェットブラストマシン/);
   assert.match(html, /セラコート実技講習/);
   assert.match(html, /220,000/);
   assert.match(html, /1日・1社2名まで/);
@@ -94,19 +95,25 @@ test("keeps the wet-blast product detail page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /ホイールや/);
-  assert.match(html, /大型エンジンに/);
+  assert.match(html, /大型エンジン/);
+  assert.match(html, /大型ウェットブラストマシン/);
+  assert.match(html, /ウェットブラストとサンドブラストの違い/);
   assert.match(html, /実機デモを予約する/);
   assert.match(html, /898,000/);
 });
 
 test("ships optimized product assets without starter preview code", async () => {
-  const [page, layout, packageJson, docsIndex, assets] = await Promise.all([
+  const [page, layout, packageJson, docsIndex, docsWetblast, sitemap, robots, assets] =
+    await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     readFile(new URL("../docs/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../docs/wetblast/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../docs/sitemap.xml", import.meta.url), "utf8"),
+    readFile(new URL("../docs/robots.txt", import.meta.url), "utf8"),
     readdir(new URL("../public/assets/", import.meta.url)),
-  ]);
+    ]);
 
   assert.match(page, /KENSO SYSTEMS/);
   assert.match(page, /logo-kensou-systems-dark\.png/);
@@ -116,6 +123,16 @@ test("ships optimized product assets without starter preview code", async () => 
   assert.match(layout, /robots:\s*\{ index: true, follow: true \}/);
   assert.match(docsIndex, /220,000/);
   assert.match(docsIndex, /代表シリーズ選定表/);
+  assert.match(docsIndex, /大型ウェットブラストマシン/);
+  assert.match(docsIndex, /href="wetblast\//);
+  assert.match(docsWetblast, /<title>大型ウェットブラストマシン/);
+  assert.match(docsWetblast, /rel="canonical" href="https:\/\/kensosystems\.jp\/wetblast\//);
+  assert.match(docsWetblast, /"@type": "Product"/);
+  assert.match(docsWetblast, /"@type": "FAQPage"/);
+  assert.match(docsWetblast, /898,000/);
+  assert.match(docsWetblast, /推奨コンプレッサー/);
+  assert.match(sitemap, /https:\/\/kensosystems\.jp\/wetblast\//);
+  assert.match(robots, /Sitemap: https:\/\/kensosystems\.jp\/sitemap\.xml/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.deepEqual(
     assets.sort(),
