@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "研装システムズ｜ウェットブラスト・サンドブラスト・粉体塗装設備";
-const description = "研装システムズの機材販売・導入相談。大型ウェットブラスト、開発予定のサンドブラスト、粉体塗装機、粉体塗装用乾燥炉を、ワークと設置環境に合わせて検討します。";
+const title = "大型ウェットブラストマシン・粉体塗装設備｜研装システムズ";
+const description = "大型ウェットブラストマシンを販売。ホイールや大型エンジンに対応し、本体AC100V・推奨コンプレッサー5.5kW・電動ワイパーを搭載。実機デモと設備導入相談を受け付けています。";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();

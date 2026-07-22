@@ -112,8 +112,8 @@ export default function EquipmentCatalogPage() {
             <div className="catalog-product-copy">
               <div className="product-status is-selling"><span>01</span> 販売中・実機デモ受付</div>
               <p className="product-type">LARGE WET BLAST MACHINE</p>
-              <h3>ホイールや大型エンジンに対応する、<br />大型ウェットブラスト。</h3>
-              <p>大型ワークを収められるキャビネット、本体電源AC100V、作業中の視界確保を助ける電動ワイパーを搭載。実機デモと設置条件の確認後、正式見積をご案内します。</p>
+              <h3>ホイールや大型エンジンに対応する、<br />大型ウェットブラストマシン。</h3>
+              <p>レストアや部品洗浄に使える大型キャビネット式ウェットブラストマシンです。本体電源AC100V、推奨コンプレッサー5.5kW、作業中の視界確保を助ける電動ワイパーを搭載。実機デモと設置条件の確認後、正式見積をご案内します。</p>
               <dl className="catalog-spec-list">
                 <div><dt>外形寸法</dt><dd>W1000 × D800 × H1900mm</dd></div>
                 <div><dt>本体電源</dt><dd>AC100V</dd></div>
