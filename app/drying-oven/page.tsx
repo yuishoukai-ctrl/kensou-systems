@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element, @next/next/no-html-link-for-pages -- Native links support the static deployment. */
 import type { Metadata } from "next";
+import "../../docs/startup.css";
 
 export const metadata: Metadata = {
   title: "粉体塗装用乾燥炉｜研装システムズ",
@@ -41,6 +42,13 @@ export default function DryingOvenPage() {
             <article className="oven-model"><span className="oven-model-label">180サイズ</span><h3>横幅 約1700mm<br />奥行 約700mm<br />高さ 約2000mm</h3><strong className="oven-model-price">販売価格 1,800,000円（税別）</strong><dl className="oven-model-spec"><div><dt>最高温度</dt><dd>220℃</dd></div><div><dt>電源</dt><dd>三相200V</dd></div><div><dt>消費電力</dt><dd>10～15kW</dd></div></dl><div className="oven-use-cases"><strong>レストアショップにおすすめ</strong><ul><li>バイクフレームを丸ごと焼付</li><li>自動車ホイールを一度に4本焼付</li><li>大きなパーツや複数部品のまとめ施工</li></ul></div><p>ワーク形状や治具によって配置が変わるため、ご購入前に対象ワークの寸法を確認します。</p></article>
           </div>
           <p className="oven-spec-note">掲載寸法は現時点の予定仕様です。扉開口、電源・熱源、最高温度、保持時間、設置・排気条件を確認します。掲載価格は税別です。送料・搬入設置費等は正式見積に明記します。</p>
+          <aside className="startup-referral" aria-labelledby="startup-referral-title">
+            <div>
+              <h3 id="startup-referral-title">パウダーコートの開業を検討中の方へ</h3>
+              <p>焼付炉に加え、前処理や塗装ブースに必要な設備と初期費用をご案内します。開業におすすめの2日間の講習セットでは、持ち込み部品での施工から価格設定・見積もりまで学べます。</p>
+            </div>
+            <a className="startup-text-link" href="/powder-coating-startup">パウダーコート開業支援・講習セットを見る</a>
+          </aside>
         </section>
 
         <section className="oven-consult" id="consult-points" aria-labelledby="consult-points-title">
