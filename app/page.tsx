@@ -247,7 +247,7 @@ export default function EquipmentCatalogPage() {
               </ul>
               <div className="training-card-foot">
                 <div className="training-price"><span>受講料</span><strong>330,000<small>円（税別）</small></strong></div>
-                <p>持込ワーク2種類／営業・原価資料／受講後60日・オンライン相談4回</p>
+                <p>持ち込み部品の種類は自由／営業・原価資料付き／受講後もLINEなどで質問に対応</p>
                 <a className="button button-primary" href="/?equipment=opening#consult">開業について相談する</a>
               </div>
             </article>

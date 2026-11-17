@@ -2,6 +2,13 @@ import assert from "node:assert/strict";
 import { access, readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 
+const startupImages = [
+  "startup-hero-workbench.webp",
+  "startup-finish-samples.webp",
+  "startup-powder-booth.webp",
+  "startup-hands-on-training.webp",
+];
+
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
@@ -88,6 +95,56 @@ test("server-renders the drying oven detail page", async () => {
   assert.match(html, /自動車ホイールを一度に4本焼付/);
   assert.match(html, /powder-curing-oven-generated\.webp/);
   assert.match(html, /ご購入前に対象ワークの寸法を確認します/);
+  assert.match(html, /href="\/powder-coating-startup">パウダーコート開業支援・講習セットを見る/);
+});
+
+test("renders the powder coating startup page with equipment, cost, course, and consultation", async () => {
+  const response = await render("/powder-coating-startup");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /パウダーコート（粉体塗装）の開業支援/);
+  assert.match(html, /なぜパウダーコートを選ぶのか/);
+  assert.match(html, /内製化で、塗装品質と外注費を管理する/);
+  assert.match(html, /毎月の外注費と内製費を比べる/);
+  assert.match(html, /href="\/\?equipment=internalization#consult"/);
+  for (const image of startupImages) {
+    assert.ok(html.includes(`src="/assets/${image}"`), image);
+  }
+  assert.match(html, /開業時の初期費用の内訳/);
+  assert.match(html, /120サイズが120万円、180サイズが180万円/);
+  assert.match(html, /開業におすすめ！ 2日間の講習セット/);
+  assert.match(html, /開業サポートパック<\/p>[\s\S]+?<strong>33万円<\/strong>/);
+  assert.doesNotMatch(html, /153万円|213万円|乾燥炉本体＋講習の小計/);
+  assert.match(html, /href="\/\?equipment=opening#consult"/);
+});
+
+test("ships the startup page and its discovery links on GitHub Pages", async () => {
+  const [startup, dryingOven, sitemap] = await Promise.all([
+    readFile(new URL("../docs/powder-coating-startup/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../docs/drying-oven/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../docs/sitemap.xml", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(startup, /rel="canonical" href="https:\/\/kensosystems\.jp\/powder-coating-startup\/"/);
+  assert.match(startup, /href="\/\?equipment=opening#consult"/);
+  assert.match(startup, /なぜパウダーコートを選ぶのか/);
+  assert.match(startup, /内製化で、塗装品質と外注費を管理する/);
+  assert.match(startup, /毎月の外注費と内製費を比べる/);
+  assert.match(startup, /href="\/\?equipment=internalization#consult"/);
+  assert.match(startup, /href="#monthly-cost"/);
+  for (const image of startupImages) {
+    assert.ok(startup.includes(`src="/assets/${image}"`), image);
+  }
+  await Promise.all(startupImages.flatMap(image => [
+    access(new URL(`../docs/assets/${image}`, import.meta.url)),
+    access(new URL(`../public/assets/${image}`, import.meta.url)),
+  ]));
+  assert.match(startup, /開業におすすめ！ 2日間の講習セット/);
+  assert.match(startup, /開業サポートパック<\/p>[\s\S]+?<strong>33万円<\/strong>/);
+  assert.doesNotMatch(startup, /153万円|213万円|乾燥炉本体＋講習の小計/);
+  assert.match(dryingOven, /class="oven-spec-note"[\s\S]+?href="\/powder-coating-startup\/"[\s\S]+?id="consult-points"/);
+  assert.match(sitemap, /<loc>https:\/\/kensosystems\.jp\/powder-coating-startup\/<\/loc>/);
 });
 
 test("keeps the wet-blast product detail page", async () => {
@@ -144,6 +201,7 @@ test("ships optimized product assets without starter preview code", async () => 
       "powder-coating-examples-transparent.webp",
       "powder-curing-oven-generated.webp",
       "sandblast-concept.webp",
+      ...startupImages.toSorted(),
       "wetblast-hero.webp",
       "wetblast-open.webp",
       "wetblast-side.webp",
